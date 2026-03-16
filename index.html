@@ -740,20 +740,17 @@ body {
 // ═══════════════════════════════════════════
 // CONFIGURATION — GitHub Backend
 // ═══════════════════════════════════════════
-const GH_OWNER = 'happenings-community';
-const GH_REPO = 'ro-test-tracker';
-const GH_TOKEN = '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'; // Fine-grained token scoped to this repo only
-const GH_API = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents`;
+const PROXY_URL = 'https://ro-test-proxy.sbmturner.workers.dev';
 
 // SHA cache — GitHub requires the current SHA to update a file
 const fileSHAs = {};
 
 async function ghGet(path) {
-  const res = await fetch(`${GH_API}/${path}`, {
-    headers: { 'Authorization': `token ${GH_TOKEN}`, 'Accept': 'application/vnd.github.v3+json' }
+  const res = await fetch(`${PROXY_URL}/${path}`, {
+    headers: { 'Accept': 'application/json' }
   });
   if (res.status === 404) return null;
-  if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
+  if (!res.ok) throw new Error(`API error: ${res.status}`);
   const data = await res.json();
   fileSHAs[path] = data.sha;
   return JSON.parse(atob(data.content));
@@ -765,14 +762,14 @@ async function ghPut(path, content, message) {
     content: btoa(unescape(encodeURIComponent(JSON.stringify(content, null, 2)))),
   };
   if (fileSHAs[path]) body.sha = fileSHAs[path];
-  const res = await fetch(`${GH_API}/${path}`, {
+  const res = await fetch(`${PROXY_URL}/${path}`, {
     method: 'PUT',
-    headers: { 'Authorization': `token ${GH_TOKEN}`, 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body)
   });
   if (!res.ok) {
     const err = await res.json();
-    throw new Error(err.message || `GitHub PUT failed: ${res.status}`);
+    throw new Error(err.message || `PUT failed: ${res.status}`);
   }
   const data = await res.json();
   fileSHAs[path] = data.content.sha;
