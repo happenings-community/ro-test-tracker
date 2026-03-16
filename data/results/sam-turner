@@ -1,1 +1,401 @@
-
+[
+  {
+    "stepId": 1.1,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 1.2,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 1.3,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 1.4,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 2.1,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 2.2,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 2.3,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 2.4,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 2.5,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 3.1,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 3.2,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 3.3,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 3.4,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 4.1,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 4.2,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 4.3,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 4.4,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 4.5,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 4.6,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 5.1,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 5.2,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 5.3,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 5.4,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 5.5,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 5.6,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 6.1,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 6.2,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 6.3,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 6.4,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 7.1,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 7.2,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 7.3,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 7.4,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 7.5,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 8.1,
+    "result": "Skipped",
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 8.2,
+    "result": "Partial",
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 8.3,
+    "result": "Pass",
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 8.4,
+    "result": "Fail",
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 8.5,
+    "result": "Pass",
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 8.6,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 8.7,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 8.8,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 9.1,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 9.2,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 9.3,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 9.4,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 9.5,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 10.1,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 10.2,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 10.3,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 11.1,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 11.2,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 11.3,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 11.4,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 12.1,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 12.2,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 12.3,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  }
+]
