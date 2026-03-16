@@ -1,0 +1,344 @@
+[
+  {
+    "stepId": 1.1,
+    "testArea": "Installation & First Launch",
+    "stepAction": "Go to the release page:|https://github.com/happenings-community/requests-and-offers/releases/latest|Mac users: choose Homebrew (recommended \u2014 see install guide) OR the DMG matching your chip (Apple Silicon = arm64, Intel = x64)|Windows: download the .exe file|Linux: choose AppImage (universal) or .deb (Debian/Ubuntu)",
+    "lookFor": "Download completes without errors.|Note the file size and how long it took."
+  },
+  {
+    "stepId": 1.2,
+    "testArea": "Installation & First Launch",
+    "stepAction": "Install the app for your platform:|Mac DMG: open the .dmg, drag the app icon into your Applications folder|Mac Homebrew: run 'brew tap happenings-community/requests-and-offers' then 'brew install --cask requests-and-offers'|Windows: right-click the .exe \u2192 'Run as administrator' \u2192 follow the wizard|Linux AppImage: run 'chmod +x' on the file, then double-click to run",
+    "lookFor": "Installation completes without errors.|Note any security warnings:|Mac: Gatekeeper \"unidentified developer\" \u2192 fix via System Settings \u2192 Privacy & Security \u2192 Open Anyway|Windows: SmartScreen warning \u2192 click \"More info\" \u2192 \"Run anyway\""
+  },
+  {
+    "stepId": 1.3,
+    "testArea": "Installation & First Launch",
+    "stepAction": "Launch the app for the first time:|Mac: open Finder \u2192 Applications \u2192 double-click \"Requests and Offers\" (or Cmd+Space, type the name)|Windows: find \"Requests and Offers\" in your Start menu|Linux: find it in your applications menu, or run from terminal",
+    "lookFor": "App opens without crashing.|You should see a loading screen or landing page.|Note how long it takes to open and anything unusual."
+  },
+  {
+    "stepId": 1.4,
+    "testArea": "Installation & First Launch",
+    "stepAction": "Look for the connection status indicator in the navigation bar at the top of the app.|Wait for it to change \u2014 this may take a moment.",
+    "lookFor": "Status changes to 'Connected'.|Time how long this takes from launch (count seconds or use a stopwatch).|Note if it stays on 'Connecting' for a long time or never connects."
+  },
+  {
+    "stepId": 2.1,
+    "testArea": "Profile Creation",
+    "stepAction": "From the landing page or main menu, find and click the 'Create Profile' button or link.|This should be visible on first use since you don't have a profile yet.",
+    "lookFor": "Profile creation form loads with fields to fill in.|Note if the form appears quickly or if there's a delay."
+  },
+  {
+    "stepId": 2.2,
+    "testArea": "Profile Creation",
+    "stepAction": "In the profile creation form, find the username field.|Type in a username of your choice (e.g. your first name or a nickname).",
+    "lookFor": "Username field accepts your input.|Note any character restrictions, length limits, or validation messages."
+  },
+  {
+    "stepId": 2.3,
+    "testArea": "Profile Creation",
+    "stepAction": "In the bio/description field, test markdown by typing:|**bold text**|*italic text*|A list: type each on a new line:|- Item one|- Item two|(See the Quick Reference panel above for more examples to copy-paste)",
+    "lookFor": "Text is accepted in the field.|The markdown won't render yet \u2014 that happens after you save.|Just confirm the field accepts the special characters."
+  },
+  {
+    "stepId": 2.4,
+    "testArea": "Profile Creation",
+    "stepAction": "Fill in any other optional fields shown on the profile form.|These might include: location, contact info, skills, or other details.|Enter realistic test data.",
+    "lookFor": "All optional fields accept input without errors.|Note which fields are available and whether any have dropdowns, checkboxes, or other special inputs."
+  },
+  {
+    "stepId": 2.5,
+    "testArea": "Profile Creation",
+    "stepAction": "Click the Save button to save your new profile.",
+    "lookFor": "Profile saves successfully.|You should see a confirmation or be taken to your profile view.|Check markdown rendering: **bold** shows bold, *italics* show italic, list shows as bullets.|Note any formatting that doesn't render as expected."
+  },
+  {
+    "stepId": 3.1,
+    "testArea": "Profile Editing",
+    "stepAction": "Navigate to 'My Profile' \u2014 look in the main menu or navigation bar for:|A profile link|Your name|A user icon",
+    "lookFor": "Your existing profile loads with all the data from Test 2.|Everything should match what you saved."
+  },
+  {
+    "stepId": 3.2,
+    "testArea": "Profile Editing",
+    "stepAction": "Click 'Edit' to enter edit mode.|In the bio field, add more markdown \u2014 try a heading:|### My Skills|And a numbered list:|1. First skill|2. Second skill|(Copy from Quick Reference if needed)",
+    "lookFor": "Edit form loads with your existing data pre-filled.|The bio field should show your original markdown.|You should be able to add to it."
+  },
+  {
+    "stepId": 3.3,
+    "testArea": "Profile Editing",
+    "stepAction": "Change another field besides bio.|Update your location, contact info, or any other editable field to something different.",
+    "lookFor": "The field is editable and accepts your new input.|Note which fields can and cannot be edited."
+  },
+  {
+    "stepId": 3.4,
+    "testArea": "Profile Editing",
+    "stepAction": "Save your changes by clicking the Save/Update button.",
+    "lookFor": "Changes save successfully.|Updated markdown renders correctly \u2014 heading appears larger, numbered list displays properly.|All other changes are reflected."
+  },
+  {
+    "stepId": 4.1,
+    "testArea": "Creating a Request",
+    "stepAction": "Navigate to the Requests section using the main menu.|Look for a 'Create' or 'New Request' button.|Click it.",
+    "lookFor": "Request creation form loads.|Should have fields for title, description, and possibly service type."
+  },
+  {
+    "stepId": 4.2,
+    "testArea": "Creating a Request",
+    "stepAction": "In the title field, enter a descriptive test title.|Example: 'Looking for a web designer'",
+    "lookFor": "Title field accepts your input.|Note any character limits."
+  },
+  {
+    "stepId": 4.3,
+    "testArea": "Creating a Request",
+    "stepAction": "In the description field, test markdown:|### What I Need|**Urgently** looking for someone with:|- Design skills|- HTML/CSS experience|(Copy from Quick Reference if needed)",
+    "lookFor": "Description field accepts markdown text.|Note if there's a rich text editor or just a plain text box."
+  },
+  {
+    "stepId": 4.4,
+    "testArea": "Creating a Request",
+    "stepAction": "Look for a service type selector or category dropdown.|If present, select an appropriate option.|If not available, note this in your observations.",
+    "lookFor": "Service type selector works \u2014 options display and are selectable.|OR note \"No service types available\" if missing/empty."
+  },
+  {
+    "stepId": 4.5,
+    "testArea": "Creating a Request",
+    "stepAction": "Click Save to create your request.",
+    "lookFor": "Request saves.|Check markdown renders properly: heading is styled, bold is bold, list shows as bullets.|You should see a confirmation or be taken to the detail view."
+  },
+  {
+    "stepId": 4.6,
+    "testArea": "Creating a Request",
+    "stepAction": "Check your request appears in TWO places:|1. Navigate to the main Requests list (menu \u2192 Requests)|2. Check My Listings (if available)",
+    "lookFor": "Your request is visible in BOTH the Requests list AND My Listings.|Title and description match what you entered."
+  },
+  {
+    "stepId": 5.1,
+    "testArea": "Creating an Offer",
+    "stepAction": "Navigate to the Offers section using the main menu.|Look for a 'Create' or 'New Offer' button.|Click it.",
+    "lookFor": "Offer creation form loads.|Should have similar fields to the request form."
+  },
+  {
+    "stepId": 5.2,
+    "testArea": "Creating an Offer",
+    "stepAction": "Enter a title for your offer.|Example: 'Offering facilitation services' or 'Web development available'",
+    "lookFor": "Title field accepts your input."
+  },
+  {
+    "stepId": 5.3,
+    "testArea": "Creating an Offer",
+    "stepAction": "In the description, use markdown:|**bold text**, *italic text*|### A Heading|- Bullet item one|- Bullet item two|(Copy from Quick Reference if needed)",
+    "lookFor": "Description field accepts markdown text."
+  },
+  {
+    "stepId": 5.4,
+    "testArea": "Creating an Offer",
+    "stepAction": "Select a service type if the option is available.|If not, note this in observations.",
+    "lookFor": "Service type selector works.|Or note if unavailable."
+  },
+  {
+    "stepId": 5.5,
+    "testArea": "Creating an Offer",
+    "stepAction": "Click Save to create your offer.",
+    "lookFor": "Offer saves.|Markdown renders correctly in the detail view."
+  },
+  {
+    "stepId": 5.6,
+    "testArea": "Creating an Offer",
+    "stepAction": "Check your offer appears in TWO places:|1. Main Offers list (menu \u2192 Offers)|2. My Listings",
+    "lookFor": "Offer visible in BOTH the Offers list and My Listings."
+  },
+  {
+    "stepId": 6.1,
+    "testArea": "Archive & Reactivate Listings",
+    "stepAction": "Go to My Listings.|Find one of the requests or offers you created in Tests 4-5.",
+    "lookFor": "Your listings are displayed with management options.|Note what actions are available (edit, archive, delete, etc)."
+  },
+  {
+    "stepId": 6.2,
+    "testArea": "Archive & Reactivate Listings",
+    "stepAction": "Click Archive (or equivalent) on one of your listings.|Confirm if prompted.",
+    "lookFor": "Listing is archived.|It should disappear from active listings or show 'Archived' status.|Note what happens visually."
+  },
+  {
+    "stepId": 6.3,
+    "testArea": "Archive & Reactivate Listings",
+    "stepAction": "Try to edit the archived listing.|Click edit or try to modify it.",
+    "lookFor": "Note what happens:|Can you edit archived listings?|Does the app prevent it?|Is there an error message?|Any behaviour here is useful to document."
+  },
+  {
+    "stepId": 6.4,
+    "testArea": "Archive & Reactivate Listings",
+    "stepAction": "Find the archived listing and reactivate it.|Look for a Reactivate, Restore, or Unarchive button.",
+    "lookFor": "Listing returns to active status.|It should reappear in the main listings.|Confirm the content is unchanged."
+  },
+  {
+    "stepId": 7.1,
+    "testArea": "Search Functionality",
+    "stepAction": "Go to the Requests page.|Find the search box.|Type a keyword from one of your request titles (from Test 4).",
+    "lookFor": "Search returns results containing your keyword.|Note how fast results appear.|Note whether search matches title, description, or both."
+  },
+  {
+    "stepId": 7.2,
+    "testArea": "Search Functionality",
+    "stepAction": "Go to the Offers page.|Search for a keyword from one of your offer titles (from Test 5).",
+    "lookFor": "Search returns your offer in the results."
+  },
+  {
+    "stepId": 7.3,
+    "testArea": "Search Functionality",
+    "stepAction": "Go to All Users.|Search for your own username or another known username.",
+    "lookFor": "Search finds the user profile.|Note whether it searches username, display name, or other fields."
+  },
+  {
+    "stepId": 7.4,
+    "testArea": "Search Functionality",
+    "stepAction": "Go to Organizations.|Search for any organization name (if any exist).|If none exist, just try using the search box.",
+    "lookFor": "If organizations exist, search finds them.|If none exist, note whether the search box is present and works without errors."
+  },
+  {
+    "stepId": 7.5,
+    "testArea": "Search Functionality",
+    "stepAction": "Search for a nonsense string that won't match anything.|Example: 'xyzzy99999'",
+    "lookFor": "Search completes without errors.|Shows empty results or a 'no results found' message.|Note the exact message shown."
+  },
+  {
+    "stepId": 8.1,
+    "testArea": "Peer Discovery (KEY TEST)",
+    "stepAction": "\u26a0\ufe0f This test requires TWO people online at the same time.|Coordinate with your testing partner:|1. Agree a specific time to both be online|2. Both launch the app|3. Both wait for 'Connected' status|Do NOT proceed until both of you are connected.",
+    "lookFor": "Both testers have the app running and showing 'Connected'.|Note the time you both came online."
+  },
+  {
+    "stepId": 8.2,
+    "testArea": "Peer Discovery (KEY TEST)",
+    "stepAction": "Confirm both testers have completed Tests 2-5:|\u2713 Both have a profile created|\u2713 Both have at least one request|\u2713 Both have at least one offer|If either is missing something, create it now before continuing.",
+    "lookFor": "Both testers confirm they have profiles, requests, and offers.|These must exist before testing discovery."
+  },
+  {
+    "stepId": 8.3,
+    "testArea": "Peer Discovery (KEY TEST)",
+    "stepAction": "Both testers: double-check you each have at least one request AND one offer visible in your own app.|If either tester is missing a listing, create one now.",
+    "lookFor": "Both testers confirm their listings are visible in their own app."
+  },
+  {
+    "stepId": 8.4,
+    "testArea": "Peer Discovery (KEY TEST)",
+    "stepAction": "Tester A: Navigate to 'All Users'.|Look through the list for Tester B's profile/username.|If not visible, wait 2-3 minutes and refresh.|Keep checking \u2014 peer discovery can take time.",
+    "lookFor": "Can Tester A see Tester B's profile?|Record YES or NO.|If yes, note how long it took to appear."
+  },
+  {
+    "stepId": 8.5,
+    "testArea": "Peer Discovery (KEY TEST)",
+    "stepAction": "Tester A: Navigate to Requests.|Look for Tester B's request(s) in the list.",
+    "lookFor": "Can Tester A see Tester B's request?|Note timing."
+  },
+  {
+    "stepId": 8.6,
+    "testArea": "Peer Discovery (KEY TEST)",
+    "stepAction": "Tester A: Navigate to Offers.|Look for Tester B's offer(s) in the list.",
+    "lookFor": "Can Tester A see Tester B's offer?|Note timing."
+  },
+  {
+    "stepId": 8.7,
+    "testArea": "Peer Discovery (KEY TEST)",
+    "stepAction": "Tester B: Now repeat the same checks:|Go to All Users \u2014 can you see Tester A?|Go to Requests \u2014 can you see Tester A's request?|Go to Offers \u2014 can you see Tester A's offer?",
+    "lookFor": "Can Tester B see Tester A's data?|IMPORTANT: Note if discovery is symmetric (both see each other) or asymmetric (one sees the other but not vice versa)."
+  },
+  {
+    "stepId": 8.8,
+    "testArea": "Peer Discovery (KEY TEST)",
+    "stepAction": "While both still online:|One tester creates a BRAND NEW listing (request or offer).|The other tester watches their list to see if it appears.|Don't refresh \u2014 just watch.",
+    "lookFor": "Does the new listing appear for the other tester?|How long does it take?|Does it need a page refresh or appear automatically?|This tests real-time sync."
+  },
+  {
+    "stepId": 9.1,
+    "testArea": "Organizations",
+    "stepAction": "Look in the main menu for an Organizations section.|Click to create a new organization.",
+    "lookFor": "Organization creation form loads.|Note what fields are available."
+  },
+  {
+    "stepId": 9.2,
+    "testArea": "Organizations",
+    "stepAction": "Fill in the organization details.|Look specifically for a 'Contact Person' field \u2014 this is new in v0.4.0.|Fill in all available fields with test data.",
+    "lookFor": "All fields accept input.|Contact Person field is present and functional.|Note if it's a text field, dropdown, or links to user profiles."
+  },
+  {
+    "stepId": 9.3,
+    "testArea": "Organizations",
+    "stepAction": "In the organization description, use markdown:|**bold**, *italic*, ### heading, - bullet list|Copy from Quick Reference if needed.",
+    "lookFor": "Description field accepts markdown."
+  },
+  {
+    "stepId": 9.4,
+    "testArea": "Organizations",
+    "stepAction": "Save the organization and view it.",
+    "lookFor": "Organization saves and displays correctly.|Markdown renders in description.|Contact Person info is shown.|All data matches what you entered."
+  },
+  {
+    "stepId": 9.5,
+    "testArea": "Organizations",
+    "stepAction": "Navigate to the Organizations list page.|Find your newly created organization.",
+    "lookFor": "Your organization appears in the list with correct name and details."
+  },
+  {
+    "stepId": 10.1,
+    "testArea": "Service Types",
+    "stepAction": "Navigate to Service Types from the main menu.|This section shows categories available for tagging requests and offers.",
+    "lookFor": "Service Types page loads and displays available categories.|Note how many there are and what they're called."
+  },
+  {
+    "stepId": 10.2,
+    "testArea": "Service Types",
+    "stepAction": "Browse through the available categories.|Click on different types to see if they expand or show details.",
+    "lookFor": "Categories are browsable and interactive.|Note the user experience \u2014 is it clear how these relate to listings?"
+  },
+  {
+    "stepId": 10.3,
+    "testArea": "Service Types",
+    "stepAction": "If you selected service types in Tests 4-5:|Navigate to those listings.|Check the categorisation is displayed correctly.",
+    "lookFor": "Listings show their assigned service type.|Categorisation makes sense and is visible when browsing."
+  },
+  {
+    "stepId": 11.1,
+    "testArea": "Navigation & UI",
+    "stepAction": "Systematically click through ALL main menu items:|Requests|Offers|All Users|Organizations|Service Types|My Profile|My Listings|Any others you can find",
+    "lookFor": "All menu items work and load their pages without errors.|Note any broken links, pages that fail to load, or unexpected behaviour."
+  },
+  {
+    "stepId": 11.2,
+    "testArea": "Navigation & UI",
+    "stepAction": "Resize the app window to narrow width:|Drag the window edge to make it narrower.|Observe how the layout adapts.",
+    "lookFor": "Layout adjusts responsively \u2014 content should reflow, not overflow or overlap.|Note any elements that break, overlap, or become unusable."
+  },
+  {
+    "stepId": 11.3,
+    "testArea": "Navigation & UI",
+    "stepAction": "At narrow width, look for a hamburger menu (\u2630 icon).|Click/tap it to open.",
+    "lookFor": "Hamburger menu appears and opens when clicked.|All navigation options are accessible.|Note if any items are missing compared to the full-width menu."
+  },
+  {
+    "stepId": 11.4,
+    "testArea": "Navigation & UI",
+    "stepAction": "Browse the entire app and pay attention to text contrast:|Can you read all text easily?|Check: labels, placeholder text, disabled elements, coloured backgrounds.",
+    "lookFor": "All text is readable with sufficient contrast.|Note any text that is hard to read, too light, or blends into its background.|Accessibility matters!"
+  },
+  {
+    "stepId": 12.1,
+    "testArea": "Network Resilience",
+    "stepAction": "While the app shows 'Connected':|Turn off your internet \u2014 toggle WiFi off or unplug ethernet.|Watch what the app does.",
+    "lookFor": "The app should detect disconnection.|Note: does the status change? How quickly?|Is there a visual indicator?"
+  },
+  {
+    "stepId": 12.2,
+    "testArea": "Network Resilience",
+    "stepAction": "With internet still OFF, try to:|Browse existing listings|Create a new listing|View profiles|Navigate between pages",
+    "lookFor": "Note what works offline and what doesn't.|Does the app show error messages? Does it crash?|Can you still see previously loaded data?|Record everything you observe."
+  },
+  {
+    "stepId": 12.3,
+    "testArea": "Network Resilience",
+    "stepAction": "Turn your internet back on.|Watch the app's connection status.",
+    "lookFor": "App reconnects and shows 'Connected'.|Note how long reconnection takes.|Check: was any data you tried to create offline saved or lost?"
+  }
+]

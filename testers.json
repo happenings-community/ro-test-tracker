@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Sacha Pignot",
+    "platform": "Linux Mint 23",
+    "installMethod": "AppImage",
+    "osVersion": "",
+    "peerTester": "Happenings crew",
+    "registeredAt": "2026-02-27"
+  },
+  {
+    "name": "Sam Turner",
+    "platform": "Mac M1",
+    "installMethod": "Homebrew",
+    "osVersion": "Tahoe 26.1",
+    "peerTester": "Anita",
+    "registeredAt": "2026-02-27"
+  },
+  {
+    "name": "Nate",
+    "platform": "Windows 11",
+    "installMethod": ".exe",
+    "osVersion": "Windows 11 ver 25H2",
+    "peerTester": "",
+    "registeredAt": "2026-03-03"
+  }
+]
