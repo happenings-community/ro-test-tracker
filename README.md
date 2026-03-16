@@ -9,14 +9,13 @@ This tool guides testers through 57 steps across 12 test areas, collecting struc
 **For testers:**
 - Step-by-step test scenarios with clear instructions and expected outcomes
 - One-click result recording (Pass / Fail / Partial / Skip)
-- Screenshot upload for visual evidence
+- Notes and observations saved automatically
 - Direct GitHub issue creation for bugs and problems
 
 **For developers:**
-- Live results dashboard in Google Sheets
-- Screenshots organised by tester and step in Google Drive
-- Failed/partial tests automatically filed as GitHub issues with full context
-- Summary view showing pass/fail rates across all test areas
+- Test results stored as JSON in this repo, version-controlled with full history
+- Failed/partial tests can be filed as GitHub issues with full context
+- Summary progress visible per tester
 
 ## Test Areas
 
@@ -29,7 +28,7 @@ This tool guides testers through 57 steps across 12 test areas, collecting struc
 | 5 | Creating an Offer | 6 | Create and verify a service offer |
 | 6 | Archive & Reactivate | 4 | Lifecycle management of listings |
 | 7 | Search | 5 | Search across requests, offers, users, orgs |
-| 8 | Peer Discovery | 8 | **Key test** — two-person discovery and sync |
+| 8 | Peer Discovery | 8 | Key test — two-person discovery and sync |
 | 9 | Organizations | 5 | Create and manage organisations |
 | 10 | Service Types | 3 | Browse and assign categories |
 | 11 | Navigation & UI | 4 | Menu, responsiveness, accessibility |
@@ -42,79 +41,77 @@ This tool guides testers through 57 steps across 12 test areas, collecting struc
 │   GitHub Pages (UI)     │  ← Testers interact here
 │   index.html            │
 └──────────┬──────────────┘
-           │ HTTPS POST
+           │ HTTPS
            ▼
 ┌─────────────────────────┐
-│   Google Apps Script    │  ← API backend
-│   (Web App)             │
-└──────┬─────┬────────┬───┘
-       │     │        │
-       ▼     ▼        ▼
-┌────────┐ ┌──────┐ ┌────────┐
-│ Sheets │ │Drive │ │GitHub  │
-│ (data) │ │(imgs)│ │(issues)│
-└────────┘ └──────┘ └────────┘
+│   Cloudflare Worker     │  ← Proxy (token stored securely)
+│   ro-test-proxy         │
+└──────────┬──────────────┘
+           │ GitHub API
+           ▼
+┌─────────────────────────┐
+│   This repo             │
+│   data/testers.json     │
+│   data/templates.json   │
+│   data/results/*.json   │
+│   Issues (bugs)         │
+└─────────────────────────┘
 ```
 
 - **Frontend:** Single HTML file served via GitHub Pages — no build step, no dependencies
-- **Backend:** Google Apps Script handles registration, result saving, screenshot uploads, and GitHub issue creation
-- **Data:** Google Sheets stores tester info, test steps, and results with a live summary dashboard
-- **Screenshots:** Uploaded to a shared Google Drive folder, linked back to the relevant test step
-- **Issues:** Failed/partial steps can be reported directly to the [main repo](https://github.com/happenings-community/requests-and-offers/issues) with full context
+- **Proxy:** Cloudflare Worker injects GitHub API token server-side — no secrets exposed client-side
+- **Data:** JSON files in this repo store tester registrations, test step templates, and per-tester results
+- **Issues:** Failed/partial steps can be reported directly to the main R&O repo
 
 ## For Testers
 
-1. Go to **[happenings-community.github.io/alpha-testing](https://happenings-community.github.io/alpha-testing/)**
+1. Go to [happenings-community.github.io/ro-test-tracker](https://happenings-community.github.io/ro-test-tracker/)
 2. Register with your name and platform details
 3. Work through the test scenarios at your own pace
 4. Record results and observations as you go
-5. Upload screenshots for anything notable
-6. Use **🐛 Report Issue** for failures — this creates a GitHub issue automatically
+5. Use 🐛 Report Issue for failures — this creates a GitHub issue automatically
 
 Your progress saves automatically. Use **Returning Tester** to pick up where you left off.
 
-## For Maintainers
+## Data Structure
 
-### Setup Requirements
-
-The backend requires a Google Apps Script deployment with access to:
-
-- **Google Sheets** — stores all test data
-- **Google Drive** — stores uploaded screenshots
-- **GitHub API** — creates issues from failed tests
-
-Configuration is in the Apps Script file (lines 7–10):
-
-```javascript
-const SPREADSHEET_ID = '...';
-const SCREENSHOTS_FOLDER_ID = '...';
-const GITHUB_TOKEN = '...';
-const GITHUB_REPO = 'happenings-community/requests-and-offers';
 ```
+data/
+├── testers.json              # All registered testers
+├── templates.json            # 57 test step definitions
+└── results/
+    ├── nate.json             # Per-tester results and observations
+    ├── sacha-pignot.json
+    └── sam-turner.json
+```
+
+## For Maintainers
 
 ### Updating Test Scenarios
 
-Test steps are defined in the **Templates** tab of the Google Sheet. Each row has:
+Test steps are defined in `data/templates.json`. Each entry has:
 
-| Column | Content |
-|--------|---------|
-| A | Step ID (e.g. `1.1`) |
-| B | Test Area name |
-| C | Step instructions (pipe `\|` delimited for bullet formatting) |
-| D | Expected outcomes (pipe `\|` delimited) |
-
-To update: edit the Templates tab, then have testers re-register to pick up changes.
+| Field | Content |
+|-------|---------|
+| `stepId` | Step ID (e.g. 1.1) |
+| `testArea` | Test area name |
+| `stepAction` | Step instructions (pipe `\|` delimited for bullet formatting) |
+| `lookFor` | Expected outcomes (pipe `\|` delimited) |
 
 ### Updating the Frontend
 
 Edit `index.html` in this repo. Changes deploy automatically via GitHub Pages within a few minutes.
 
+### Cloudflare Worker
+
+The proxy worker (`ro-test-proxy`) runs on Cloudflare's free tier. The GitHub API token is stored as an encrypted secret in the Worker's environment variables — it never appears in client-side code.
+
 ## Related
 
 - [Requests & Offers](https://github.com/happenings-community/requests-and-offers) — the application being tested
-- [Install Guide](https://github.com/happenings-community/requests-and-offers/releases/latest) — download and installation instructions
+- [Install Guide](https://github.com/happenings-community/requests-and-offers/blob/main/INSTALL.md) — download and installation instructions
 - [Homebrew Tap](https://github.com/happenings-community/homebrew-requests-and-offers) — macOS Homebrew installation
 
-## License
+## Licence
 
 Internal testing tool for the hAppenings community. Not intended for redistribution.
