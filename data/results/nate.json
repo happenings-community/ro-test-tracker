@@ -1,0 +1,401 @@
+[
+  {
+    "stepId": 1.1,
+    "result": "Pass",
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 1.2,
+    "result": "Pass",
+    "observations": "I did not run as administrator, received smartscreen warning and continued past it, seems to have worked fine.",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 1.3,
+    "result": "Pass",
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 1.4,
+    "result": "Pass",
+    "observations": "Took 12 seconds to launch, connection indicator was already green by the time it came up. The initial screen is a Code 404 error. Clicking Go Home takes me to a nice dashboard.",
+    "screenshots": "https://drive.google.com/file/d/1w0LdASvo6QEbnkIBikhlMo3ouCFWuaua/view?usp=drivesdk",
+    "githubIssues": null
+  },
+  {
+    "stepId": 2.1,
+    "result": "Pass",
+    "observations": "Seemed quick.",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 2.2,
+    "result": "Pass",
+    "observations": "I specified a simple username, did not run into any limitations.",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 2.3,
+    "result": "Pass",
+    "observations": "Markdown works, the formatting controls are nice.",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 2.4,
+    "result": "Pass",
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 2.5,
+    "result": "Pass",
+    "observations": "I don't love the centered text justification, especially if there are bullets, but that's a minor quibble at most.",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 3.1,
+    "result": "Pass",
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 3.2,
+    "result": "Pass",
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 3.3,
+    "result": "Pass",
+    "observations": "Appears all fields can be edited.",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 3.4,
+    "result": "Pass",
+    "observations": "Nice confirmation dialog that changes are saved.",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 4.1,
+    "result": "Pass",
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 4.2,
+    "result": "Pass",
+    "observations": "Plenty of space for a verbose title.",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 4.3,
+    "result": "Pass",
+    "observations": "Rich text editor is present.",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 4.4,
+    "result": "Pass",
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 4.5,
+    "result": "Pass",
+    "observations": "Click \"Create request\" (not \"Save\"). Markdown renders properly. There may have been a confirmation, then the list of requests.",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 4.6,
+    "result": "Pass",
+    "observations": "In the \"my listings\" view, the card says \"Service Type\" instead of showing \"Fundraising.\"",
+    "screenshots": "https://drive.google.com/file/d/1DLzvKhA3lrztWEuK3T2HaIGdDzoPbtAg/view?usp=drivesdk",
+    "githubIssues": null
+  },
+  {
+    "stepId": 5.1,
+    "result": "Pass",
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 5.2,
+    "result": "Pass",
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 5.3,
+    "result": "Pass",
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 5.4,
+    "result": "Pass",
+    "observations": "Selected three service types",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 5.5,
+    "result": "Pass",
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 5.6,
+    "result": "Pass",
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 6.1,
+    "result": "Pass",
+    "observations": "Details, Archive, and Delete buttons on each request and offer",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 6.2,
+    "result": "Pass",
+    "observations": "Disappears from active listings. Informative confirmation dialogs. Visible if I click \"archived listings.\"",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 6.3,
+    "result": "Pass",
+    "observations": "Buttons seem dim, but I was able to click Details, and then Edit. That gave Edit Request - Access Denied  - You don't have permission to edit this request.",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 6.4,
+    "result": "Skipped",
+    "observations": "Clicked \"Restore,\" received \"Restore functionality coming soon dialog.\"",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 7.1,
+    "result": "Pass",
+    "observations": "Very rapidly narrows results in real-time as I type. Search works for any part of title or description.",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 7.2,
+    "result": "Pass",
+    "observations": "Same as for requests search",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 7.3,
+    "result": "Pass",
+    "observations": "Search works fast and well, as with requests and offers searches. Appears to search name and nickname, not bio or location.",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 7.4,
+    "result": "Pass",
+    "observations": "Searches name and email fields.",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 7.5,
+    "result": "Pass",
+    "observations": "\"Search Results Total: 2 Filtered: 0\"",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 8.1,
+    "result": "Pass",
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 8.2,
+    "result": "Pass",
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 8.3,
+    "result": "Pass",
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 8.4,
+    "result": "Pass",
+    "observations": "Seconds",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 8.5,
+    "result": "Pass",
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 8.6,
+    "result": "Pass",
+    "observations": "Fast",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 8.7,
+    "result": "Pass",
+    "observations": "Both see each other",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 8.8,
+    "result": "Partial",
+    "observations": "Test created: 6 sec., was visible on partner's device after 2.5 minutes upon refresh (didn't try refreshing earlier).",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 9.1,
+    "result": "Pass",
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 9.2,
+    "result": "Pass",
+    "observations": "Did not notice a contact person field until I went back to edit the organization. Then, I saw myself listed as a contact person and was able to choose myself as coordinator from the list (I was the only one in the list).",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 9.3,
+    "result": "Pass",
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 9.4,
+    "result": "Pass",
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 9.5,
+    "result": "Fail",
+    "observations": "Organization was not in list. But maybe that's because it's not yet accepted?",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 10.1,
+    "result": "Pass",
+    "observations": "13 types listed.",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 10.2,
+    "result": "Pass",
+    "observations": "Seems clear and intutive, and listings show up for categories that use them.",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 10.3,
+    "result": "Pass",
+    "observations": "Works well to click through from service types to requests and offers, and from those back to service types.",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 11.1,
+    "result": "Pass",
+    "observations": "\"Projects coming soon...\" otherwise everything seems to work!",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 11.2,
+    "result": "Pass",
+    "observations": "Seems to adapt gracefully and intuitively. No overlaps or missing elements.",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 11.3,
+    "result": "Pass",
+    "observations": "All items seem present and functional.",
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 11.4,
+    "result": "Pass",
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 12.1,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 12.2,
+    "result": null,
+    "observations": null,
+    "screenshots": null,
+    "githubIssues": null
+  },
+  {
+    "stepId": 12.3,
+    "result": "Partial",
+    "observations": "Never said offline, so could not tell how long reconnection takes. The offer I created while offline is still there after restarting the app.",
+    "screenshots": null,
+    "githubIssues": null
+  }
+]
