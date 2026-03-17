@@ -16,7 +16,7 @@
   {
     "stepId": 1.3,
     "result": "Fail",
-    "observations": null,
+    "observations": "test",
     "screenshots": null,
     "githubIssues": null
   },
