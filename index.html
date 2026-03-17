@@ -1362,7 +1362,7 @@ function setResult(stepId, value) {
   });
   card.classList.add('completed');
 
-  const step = steps.find(s => s.stepId === stepId);
+  const step = steps.find(s => String(s.stepId) === String(stepId));
   if (step) step.result = value;
 
   // Update testerResults array
