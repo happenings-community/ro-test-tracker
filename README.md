@@ -1,4 +1,4 @@
-# R&O v0.4.0 Alpha Test Tracker
+# R&O v0.4.1 Alpha Test Tracker
 
 A lightweight web app for coordinating structured alpha testing of [Requests & Offers](https://github.com/happenings-community/requests-and-offers) — a peer-to-peer resource sharing application built on [Holochain](https://holochain.org).
 
