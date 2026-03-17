@@ -624,6 +624,211 @@ body {
 .save-indicator.saved { background: var(--pass-bg); color: var(--pass); border: 1px solid var(--pass-border); opacity: 1; }
 .save-indicator.error { background: var(--fail-bg); color: var(--fail); border: 1px solid var(--fail-border); opacity: 1; }
 
+  .report-btn {
+  padding: 0.25rem 0.6rem;
+  border: 1.5px solid var(--fail-border);
+  border-radius: var(--radius-sm);
+  background: var(--fail-bg);
+  color: var(--fail);
+  font-family: inherit;
+  font-size: 0.73rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+  display: none;
+}
+ 
+.report-btn:hover { background: #ffd7cc; border-color: var(--fail); }
+.report-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.report-btn.show { display: inline-block; }
+ 
+.report-btn.reported {
+  border-color: var(--pass-border);
+  background: var(--pass-bg);
+  color: var(--pass);
+  cursor: default;
+}
+ 
+.issue-link {
+  font-size: 0.72rem;
+  color: var(--purple-light);
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+}
+ 
+.issue-link:hover { text-decoration: underline; }
+ 
+/* ── FAB bug button ── */
+.fab-bug {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--fail);
+  color: white;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(222, 53, 11, 0.35);
+  transition: all 0.2s;
+  z-index: 1000;
+  display: none;
+}
+ 
+.fab-bug:hover { transform: scale(1.1); box-shadow: 0 6px 16px rgba(222, 53, 11, 0.45); }
+.fab-bug.show { display: flex; align-items: center; justify-content: center; }
+ 
+/* ── Scroll hint ── */
+.scroll-hint {
+  position: fixed;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+  z-index: 999;
+}
+ 
+.scroll-hint.show { opacity: 1; }
+ 
+.scroll-hint span.label {
+  font-size: 0.78rem;
+  color: var(--purple);
+  font-weight: 600;
+  background: var(--surface);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+ 
+.scroll-hint .circle-arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 3px solid var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  animation: bounce 1.5s ease-in-out infinite;
+}
+ 
+.scroll-hint .circle-arrow svg {
+  width: 24px;
+  height: 24px;
+}
+ 
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+ 
+/* ── Bug report modal ── */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(45, 38, 84, 0.5);
+  z-index: 1001;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+ 
+.modal-overlay.show { display: flex; }
+ 
+.modal {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 1.5rem;
+}
+ 
+.modal h2 {
+  font-size: 1.1rem;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+ 
+.modal p {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  margin-bottom: 1rem;
+}
+ 
+.modal label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  margin-bottom: 0.3rem;
+  margin-top: 0.8rem;
+}
+ 
+.modal input, .modal textarea, .modal select {
+  width: 100%;
+  padding: 0.5rem 0.65rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: var(--text);
+  background: var(--bg);
+  transition: border-color 0.15s;
+}
+ 
+.modal input:focus, .modal textarea:focus, .modal select:focus {
+  outline: none;
+  border-color: var(--purple-light);
+}
+ 
+.modal textarea { resize: vertical; min-height: 80px; }
+ 
+.modal-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+  justify-content: flex-end;
+}
+ 
+.modal-btn {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  color: var(--text-dim);
+  transition: all 0.15s;
+}
+ 
+.modal-btn:hover { background: var(--surface-hover); }
+ 
+.modal-btn.primary {
+  background: var(--fail);
+  color: white;
+  border-color: var(--fail);
+}
+ 
+.modal-btn.primary:hover { background: #c62d08; }
+.modal-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+ 
+
 .loading {
   display: flex;
   align-items: center;
@@ -735,6 +940,44 @@ body {
 </div>
 
 <div class="save-indicator" id="saveIndicator"></div>
+  <div class="scroll-hint" id="scrollHint">
+  <span class="label">Scroll for test scenarios</span>
+  <div class="circle-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></div>
+</div>
+
+<button class="fab-bug" id="fabBug" onclick="openBugModal()" title="Report a bug">🐛</button>
+
+<div class="modal-overlay" id="bugModal">
+  <div class="modal">
+    <h2>🐛 Report a Bug</h2>
+    <p>Found something outside the test steps? Describe it here and we'll create a GitHub issue.</p>
+
+    <label>Summary *</label>
+    <input type="text" id="bugTitle" placeholder="Brief description of the issue">
+
+    <label>What were you doing?</label>
+    <textarea id="bugContext" rows="2" placeholder="e.g. I was browsing the offers list and clicked on..."></textarea>
+
+    <label>What happened?</label>
+    <textarea id="bugActual" rows="2" placeholder="e.g. The page went blank / got an error message / button didn't respond"></textarea>
+
+    <label>What did you expect to happen?</label>
+    <textarea id="bugExpected" rows="2" placeholder="e.g. I expected to see the offer details"></textarea>
+
+    <label>Severity</label>
+    <select id="bugSeverity">
+      <option value="minor">Minor — cosmetic or small annoyance</option>
+      <option value="moderate" selected>Moderate — something doesn't work right</option>
+      <option value="major">Major — blocks me from continuing</option>
+      <option value="critical">Critical — crash or data loss</option>
+    </select>
+
+    <div class="modal-buttons">
+      <button class="modal-btn" onclick="closeBugModal()">Cancel</button>
+      <button class="modal-btn primary" id="bugSubmitBtn" onclick="submitBugReport()">🐛 Submit Bug Report</button>
+    </div>
+  </div>
+</div>
 
 <script>
 // ═══════════════════════════════════════════
@@ -973,6 +1216,13 @@ function launchApp() {
   document.getElementById('displayName').textContent = testerName;
   renderSteps();
   updateProgress();
+  document.getElementById('fabBug').classList.add('show');
+  document.getElementById('scrollHint').classList.add('show');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 200) {
+      document.getElementById('scrollHint').classList.remove('show');
+    }
+  }, { passive: true });
 }
 
 // ═══════════════════════════════════════════
@@ -1059,7 +1309,11 @@ function renderSteps() {
 
       html += '</div>';
       html += '<textarea class="observations-input" placeholder="Notes / observations..." oninput="setNotes(' + s.stepId + ', this.value)" rows="1">' + escapeHtml(s.notes) + '</textarea>';
-      html += '</div></div></div></div>';
+      html += '</div>';
+      html += '<div style="margin-top:0.4rem;">';
+      html += '<button class="report-btn' + (s.result === 'Fail' || s.result === 'Partial' ? ' show' : '') + '" id="report-btn-' + sid + '" onclick="reportIssue(\'' + s.stepId + '\')">🐛 Report Issue</button>';
+      html += '</div>';
+      html += '</div></div></div>';
     });
 
     html += '</div></div>';
@@ -1117,6 +1371,15 @@ function setResult(stepId, value) {
 
   debouncedSave();
   updateProgress();
+  // Show/hide report button for Fail/Partial
+  const reportBtn = document.getElementById('report-btn-' + sid);
+  if (reportBtn) {
+    if (value === 'Fail' || value === 'Partial') {
+      reportBtn.classList.add('show');
+    } else {
+      reportBtn.classList.remove('show');
+    }
+  }
 }
 
 function setNotes(stepId, value) {
@@ -1179,6 +1442,150 @@ function updateProgress() {
     const header = document.querySelector('#group-' + num + ' .group-progress');
     if (header) header.textContent = counts.done + '/' + counts.total;
   });
+}
+
+// ═══════════════════════════════════════════
+// PER-STEP ISSUE REPORTING
+// ═══════════════════════════════════════════
+async function reportIssue(stepId) {
+  const step = steps.find(s => s.stepId === stepId);
+  if (!step) return;
+
+  const sid = String(stepId).replace('.', '_');
+  const btn = document.getElementById('report-btn-' + sid);
+  const notesVal = step.notes || '';
+
+  if (!notesVal.trim()) {
+    alert('Please add some observations/notes describing the issue before reporting.');
+    return;
+  }
+
+  if (!confirm('Create a GitHub issue for Step ' + stepId + ' (' + step.result + ')?\n\nThis will be visible on the public R&O repo.')) return;
+
+  btn.disabled = true;
+  btn.textContent = '⏳ Creating...';
+
+  const title = '[Alpha Test] Step ' + stepId + ' — ' + (step.result || 'Issue');
+  const body = '## Alpha Test Bug Report\n\n' +
+    '**Tester:** ' + testerName + '\n' +
+    '**Step:** ' + stepId + '\n' +
+    '**Result:** ' + (step.result || 'N/A') + '\n\n' +
+    '### What the step asks\n' + (step.action || '').replace(/\|/g, '\n- ') + '\n\n' +
+    '### Expected\n' + (step.lookFor || '').replace(/\|/g, '\n- ') + '\n\n' +
+    '### Observations\n' + notesVal + '\n\n' +
+    '---\n*Reported via [R&O Alpha Test Tracker](https://happenings-community.github.io/ro-test-tracker/)*';
+
+  try {
+    const res = await fetch(PROXY_URL + '/issues', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        title: title,
+        body: body,
+        labels: ['alpha-test', 'bug']
+      })
+    });
+
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.message || 'Failed to create issue');
+    }
+
+    const issue = await res.json();
+
+    btn.classList.add('reported');
+    btn.disabled = false;
+    btn.innerHTML = '✓ <a href="' + issue.html_url + '" target="_blank" class="issue-link">Issue #' + issue.number + '</a> · <a href="' + issue.html_url + '#issuecomment-new" target="_blank" class="issue-link">📷 Add screenshot</a>';
+    btn.onclick = null;
+
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = '🐛 Report Issue';
+    alert('Failed to create issue: ' + err.message);
+  }
+}
+
+// ═══════════════════════════════════════════
+// CUSTOM BUG REPORT (FAB MODAL)
+// ═══════════════════════════════════════════
+function openBugModal() {
+  document.getElementById('bugModal').classList.add('show');
+  document.getElementById('bugTitle').focus();
+}
+
+function closeBugModal() {
+  document.getElementById('bugModal').classList.remove('show');
+  document.getElementById('bugTitle').value = '';
+  document.getElementById('bugContext').value = '';
+  document.getElementById('bugActual').value = '';
+  document.getElementById('bugExpected').value = '';
+  document.getElementById('bugSeverity').value = 'moderate';
+}
+
+async function submitBugReport() {
+  const titleVal = document.getElementById('bugTitle').value.trim();
+  const context = document.getElementById('bugContext').value.trim();
+  const actual = document.getElementById('bugActual').value.trim();
+  const expected = document.getElementById('bugExpected').value.trim();
+  const severity = document.getElementById('bugSeverity').value;
+  const btn = document.getElementById('bugSubmitBtn');
+
+  if (!titleVal) {
+    alert('Please enter a summary of the issue.');
+    document.getElementById('bugTitle').focus();
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = '⏳ Submitting...';
+
+  const severityLabel = severity === 'critical' ? '🔴 Critical' :
+                        severity === 'major' ? '🟠 Major' :
+                        severity === 'moderate' ? '🟡 Moderate' : '🟢 Minor';
+
+  const title = '[Alpha Test] ' + titleVal;
+  const body = '## Ad-hoc Bug Report\n\n' +
+    '**Tester:** ' + testerName + '\n' +
+    '**Severity:** ' + severityLabel + '\n\n' +
+    '### What I was doing\n' + (context || '_Not specified_') + '\n\n' +
+    '### What happened\n' + (actual || '_Not specified_') + '\n\n' +
+    '### What I expected\n' + (expected || '_Not specified_') + '\n\n' +
+    '---\n*Reported via [R&O Alpha Test Tracker](https://happenings-community.github.io/ro-test-tracker/) · ' +
+    'To add a screenshot, comment on this issue and drag-drop the image.*';
+
+  try {
+    const res = await fetch(PROXY_URL + '/issues', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        title: title,
+        body: body,
+        labels: ['alpha-test', 'bug', severity]
+      })
+    });
+
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.message || 'Failed to create issue');
+    }
+
+    const issue = await res.json();
+
+    btn.textContent = '✓ Issue #' + issue.number + ' created';
+    setTimeout(() => {
+      closeBugModal();
+      btn.disabled = false;
+      btn.textContent = '🐛 Submit Bug Report';
+      if (confirm('Bug report submitted as Issue #' + issue.number + '.\n\nWant to open it now to add a screenshot?')) {
+        window.open(issue.html_url, '_blank');
+      }
+    }, 1000);
+
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = '🐛 Submit Bug Report';
+    alert('Failed to submit: ' + err.message);
+  }
 }
 
 // ═══════════════════════════════════════════
