@@ -30,7 +30,7 @@
   {
     "stepId": 2.1,
     "result": "Partial",
-    "observations": null,
+    "observations": "test",
     "screenshots": null,
     "githubIssues": null
   },
