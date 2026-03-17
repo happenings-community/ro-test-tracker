@@ -9,7 +9,7 @@
   {
     "stepId": 1.2,
     "result": "Fail",
-    "observations": null,
+    "observations": "hello",
     "screenshots": null,
     "githubIssues": null
   },
