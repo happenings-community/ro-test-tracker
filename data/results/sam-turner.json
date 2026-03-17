@@ -1,7 +1,7 @@
 [
   {
     "stepId": 1.1,
-    "result": "Partial",
+    "result": "Fail",
     "observations": "test",
     "screenshots": null,
     "githubIssues": null
