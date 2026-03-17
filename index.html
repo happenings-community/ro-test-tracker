@@ -1453,7 +1453,8 @@ async function reportIssue(stepId) {
 
   const sid = String(stepId).replace('.', '_');
   const btn = document.getElementById('report-btn-' + sid);
-  const notesVal = step.notes || '';
+  const notesEl = document.querySelector('#step-' + sid + ' .observations-input');
+  const notesVal = notesEl ? notesEl.value : (step.notes || '');
 
   if (!notesVal.trim()) {
     alert('Please add some observations/notes describing the issue before reporting.');
