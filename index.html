@@ -1448,7 +1448,7 @@ function updateProgress() {
 // PER-STEP ISSUE REPORTING
 // ═══════════════════════════════════════════
 async function reportIssue(stepId) {
-  const step = steps.find(s => s.stepId === stepId);
+  const step = steps.find(s => String(s.stepId) === String(stepId));
   if (!step) return;
 
   const sid = String(stepId).replace('.', '_');
