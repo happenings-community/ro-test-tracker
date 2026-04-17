@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>R&O v0.4.1 — Test Scenarios</title>
+<title>R&O v0.5.1 — Test Scenarios</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -906,7 +906,7 @@ body {
   <div class="login-card">
     <img class="login-logo" id="loginLogo" alt="R&O Logo">
     <h1>Requests &amp; Offers</h1>
-    <span class="version">v0.4.0 Alpha Test</span>
+    <span class="version">v0.5.1 Alpha Test</span>
     <p class="subtitle">Thank you for helping us test! Register below or log back in to continue where you left off.</p>
 
     <div class="mode-toggle">
@@ -964,7 +964,7 @@ body {
       <div class="header-left">
         <img class="header-logo" id="headerLogo" alt="R&O">
         <div class="header-text">
-          <h2>R&amp;O v0.4.0 Test Scenarios</h2>
+          <h2>R&amp;O v0.5.1 Test Scenarios</h2>
           <div class="tester-name" id="displayName"></div>
         </div>
       </div>
@@ -1081,7 +1081,7 @@ async function ghPut(path, content, message) {
   return data;
 }
 
-document.getElementById('loginLogo').src ='ro-test-logo.png'
+document.getElementById('loginLogo').src = 'ro-test-logo.png';
 document.getElementById('headerLogo').src = 'ro-test-logo.png';
 
 let steps = [];
@@ -1419,7 +1419,6 @@ function toggleGroup(testNum) {
 // NOTES — explicit Save button (Safari-safe)
 // ═══════════════════════════════════════════
 function trackNoteChange(sid) {
-  // Reset the Save button visual state when the user types
   const btn = document.getElementById('save-notes-' + sid);
   if (btn) {
     btn.classList.remove('saved');
@@ -1438,7 +1437,6 @@ function saveNotesForStep(stepId, sid) {
   const tr = testerResults.find(r => String(r.stepId) === String(stepId));
   if (tr) tr.observations = value || null;
 
-  // Save immediately
   saveResults().then(() => {
     const btn = document.getElementById('save-notes-' + sid);
     if (btn) {
@@ -1493,9 +1491,6 @@ function setResult(stepId, value) {
 // ═══════════════════════════════════════════
 // SAVING
 // ═══════════════════════════════════════════
-let saveDebounceTimer = null;
-let pendingSave = false;
-
 async function saveResults() {
   showSaveIndicator('saving');
   try {
@@ -1562,8 +1557,8 @@ function openStepBugModal(stepId, result) {
 
   // Fill step context
   document.getElementById('bugStepId').textContent = 'Step ' + stepId;
-  document.getElementById('bugStepAction').textContent = (step.action || '').replace(/\|/g, '\n• ');
-  document.getElementById('bugStepExpected').textContent = (step.lookFor || '').replace(/\|/g, '\n• ');
+  document.getElementById('bugStepAction').textContent = (step.action || '').replace(/\|/g, '\n\u2022 ');
+  document.getElementById('bugStepExpected').textContent = (step.lookFor || '').replace(/\|/g, '\n\u2022 ');
 
   // Pre-fill summary
   const testNum = String(stepId).split('.')[0];
@@ -1620,6 +1615,15 @@ function skipBugReport() {
   closeBugModal();
 }
 
+// ═══════════════════════════════════════════
+// BUG REPORT SUBMISSION — with deduplication
+// ═══════════════════════════════════════════
+// For step-triggered reports:
+//   1. Check if an open issue exists for this step (via step-X.Y label)
+//   2. If yes → add a comment to the existing issue
+//   3. If no  → create a new issue with the step-X.Y label
+// For ad-hoc FAB reports: always create a new issue
+
 async function submitBugReport() {
   const titleVal = document.getElementById('bugTitle').value.trim();
   const actual = document.getElementById('bugActual').value.trim();
@@ -1639,81 +1643,143 @@ async function submitBugReport() {
   }
 
   btn.disabled = true;
-  btn.innerHTML = '&#x23f3; Submitting...';
+  btn.innerHTML = '&#x23f3; Checking for existing reports...';
 
   const severityLabel = severity === 'critical' ? '\ud83d\udd34 Critical' :
                         severity === 'major' ? '\ud83d\udfe0 Major' :
                         severity === 'moderate' ? '\ud83d\udfe1 Moderate' : '\ud83d\udfe2 Minor';
 
-  let title, body;
-
-  if (bugReportStepId !== null) {
-    // Step-triggered report
-    const step = steps.find(s => String(s.stepId) === String(bugReportStepId));
-    title = '[Alpha Test] Step ' + bugReportStepId + ' \u2014 ' + (step ? step.result : 'Issue');
-    body = '## Alpha Test Bug Report\n\n' +
-      '**Tester:** ' + testerName + '\n' +
-      '**Step:** ' + bugReportStepId + '\n' +
-      '**Result:** ' + (step ? step.result : 'N/A') + '\n' +
-      '**Severity:** ' + severityLabel + '\n\n' +
-      '### What the step asks\n' + ((step ? step.action : '') || '').replace(/\|/g, '\n- ') + '\n\n' +
-      '### Expected\n' + ((step ? step.lookFor : '') || '').replace(/\|/g, '\n- ') + '\n\n' +
-      '### What happened\n' + actual + '\n\n' +
-      '---\n*Reported via [R&O Alpha Test Tracker](https://happenings-community.github.io/ro-test-tracker/)*';
-  } else {
-    // Ad-hoc FAB report
-    const context = document.getElementById('bugContext').value.trim();
-    const expected = document.getElementById('bugExpected').value.trim();
-    title = '[Alpha Test] ' + titleVal;
-    body = '## Ad-hoc Bug Report\n\n' +
-      '**Tester:** ' + testerName + '\n' +
-      '**Severity:** ' + severityLabel + '\n\n' +
-      '### What I was doing\n' + (context || '_Not specified_') + '\n\n' +
-      '### What happened\n' + (actual || '_Not specified_') + '\n\n' +
-      '### What I expected\n' + (expected || '_Not specified_') + '\n\n' +
-      '---\n*Reported via [R&O Alpha Test Tracker](https://happenings-community.github.io/ro-test-tracker/) \u00b7 ' +
-      'To add a screenshot, comment on this issue and drag-drop the image.*';
-  }
-
   try {
-    const res = await fetch(PROXY_URL + '/issues', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        title: title,
-        body: body,
-        labels: ['alpha-test', 'bug', severity]
-      })
-    });
-
-    if (!res.ok) {
-      const err = await res.json();
-      throw new Error(err.message || 'Failed to create issue');
-    }
-
-    const issue = await res.json();
-
+    // ── Step-triggered report: check for existing issue ──
     if (bugReportStepId !== null) {
-      // Show issue link on the step card
-      const sid = String(bugReportStepId).replace('.', '_');
-      const linkEl = document.getElementById('issue-link-' + sid);
-      if (linkEl) {
-        linkEl.innerHTML = '\u2714 <a href="' + issue.html_url + '" target="_blank">Issue #' + issue.number + '</a> \u00b7 <a href="' + issue.html_url + '#issuecomment-new" target="_blank">\ud83d\udcf7 Add screenshot</a>';
-        linkEl.classList.add('show');
-      }
-    }
+      const step = steps.find(s => String(s.stepId) === String(bugReportStepId));
+      const testNum = String(bugReportStepId).split('.')[0];
+      const groupName = (TEST_GROUPS[testNum] || {}).name || '';
 
-    // Brief success message then close
-    btn.innerHTML = '\u2714 Issue #' + issue.number + ' created';
-    setTimeout(() => {
-      closeBugModal();
-      if (bugReportStepId === null) {
-        // Only prompt to open for ad-hoc reports
+      // Check if an issue already exists for this step
+      const findRes = await fetch(PROXY_URL + '/issues/find-by-step?step=' + bugReportStepId);
+      const findData = await findRes.json();
+
+      if (findData.found) {
+        // ── Existing issue found — add a comment ──
+        btn.innerHTML = '&#x23f3; Adding to existing report...';
+
+        const commentBody = '## Additional Tester Report\n\n' +
+          '**Tester:** ' + testerName + '\n' +
+          '**Result:** ' + (step ? step.result : 'N/A') + '\n' +
+          '**Severity:** ' + severityLabel + '\n\n' +
+          '### What happened\n' + actual + '\n\n' +
+          '---\n*Reported via [R&O Alpha Test Tracker](https://happenings-community.github.io/ro-test-tracker/)*';
+
+        const commentRes = await fetch(PROXY_URL + '/issues/' + findData.issue_number + '/comments', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ body: commentBody })
+        });
+
+        if (!commentRes.ok) {
+          const err = await commentRes.json();
+          throw new Error(err.message || 'Failed to add comment');
+        }
+
+        const comment = await commentRes.json();
+
+        // Show issue link on the step card
+        const sid = String(bugReportStepId).replace('.', '_');
+        const linkEl = document.getElementById('issue-link-' + sid);
+        if (linkEl) {
+          linkEl.innerHTML = '\u2714 Added to <a href="' + findData.html_url + '" target="_blank">Issue #' + findData.issue_number + '</a> \u00b7 <a href="' + comment.html_url + '" target="_blank">\ud83d\udcf7 Add screenshot</a>';
+          linkEl.classList.add('show');
+        }
+
+        btn.innerHTML = '\u2714 Added to Issue #' + findData.issue_number;
+        setTimeout(() => closeBugModal(), 1200);
+        return;
+      }
+
+      // ── No existing issue — create new one with step label ──
+      btn.innerHTML = '&#x23f3; Creating issue...';
+
+      const title = '[Alpha Test] Step ' + bugReportStepId + ' \u2014 ' + (step ? step.result : 'Issue');
+      const body = '## Alpha Test Bug Report\n\n' +
+        '**Tester:** ' + testerName + '\n' +
+        '**Step:** ' + bugReportStepId + '\n' +
+        '**Result:** ' + (step ? step.result : 'N/A') + '\n' +
+        '**Severity:** ' + severityLabel + '\n\n' +
+        '### What the step asks\n' + ((step ? step.action : '') || '').replace(/\|/g, '\n- ') + '\n\n' +
+        '### Expected\n' + ((step ? step.lookFor : '') || '').replace(/\|/g, '\n- ') + '\n\n' +
+        '### What happened\n' + actual + '\n\n' +
+        '---\n*Reported via [R&O Alpha Test Tracker](https://happenings-community.github.io/ro-test-tracker/)*';
+
+      const res = await fetch(PROXY_URL + '/issues', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          title: title,
+          body: body,
+          labels: ['alpha-test', 'bug', severity, 'step-' + bugReportStepId]
+        })
+      });
+
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.message || 'Failed to create issue');
+      }
+
+      const issue = await res.json();
+
+      // Show issue link on the step card
+      const sid2 = String(bugReportStepId).replace('.', '_');
+      const linkEl2 = document.getElementById('issue-link-' + sid2);
+      if (linkEl2) {
+        linkEl2.innerHTML = '\u2714 <a href="' + issue.html_url + '" target="_blank">Issue #' + issue.number + '</a> \u00b7 <a href="' + issue.html_url + '#issuecomment-new" target="_blank">\ud83d\udcf7 Add screenshot</a>';
+        linkEl2.classList.add('show');
+      }
+
+      btn.innerHTML = '\u2714 Issue #' + issue.number + ' created';
+      setTimeout(() => closeBugModal(), 1200);
+
+    } else {
+      // ── Ad-hoc FAB report — always create new issue ──
+      btn.innerHTML = '&#x23f3; Submitting...';
+
+      const context = document.getElementById('bugContext').value.trim();
+      const expected = document.getElementById('bugExpected').value.trim();
+      const title = '[Alpha Test] ' + titleVal;
+      const body = '## Ad-hoc Bug Report\n\n' +
+        '**Tester:** ' + testerName + '\n' +
+        '**Severity:** ' + severityLabel + '\n\n' +
+        '### What I was doing\n' + (context || '_Not specified_') + '\n\n' +
+        '### What happened\n' + (actual || '_Not specified_') + '\n\n' +
+        '### What I expected\n' + (expected || '_Not specified_') + '\n\n' +
+        '---\n*Reported via [R&O Alpha Test Tracker](https://happenings-community.github.io/ro-test-tracker/) \u00b7 ' +
+        'To add a screenshot, comment on this issue and drag-drop the image.*';
+
+      const res = await fetch(PROXY_URL + '/issues', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          title: title,
+          body: body,
+          labels: ['alpha-test', 'bug', severity]
+        })
+      });
+
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.message || 'Failed to create issue');
+      }
+
+      const issue = await res.json();
+
+      btn.innerHTML = '\u2714 Issue #' + issue.number + ' created';
+      setTimeout(() => {
+        closeBugModal();
         if (confirm('Bug report submitted as Issue #' + issue.number + '.\n\nWant to open it now to add a screenshot?')) {
           window.open(issue.html_url, '_blank');
         }
-      }
-    }, 1000);
+      }, 1000);
+    }
 
   } catch (err) {
     btn.disabled = false;
