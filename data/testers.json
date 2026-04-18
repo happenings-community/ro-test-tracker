@@ -22,5 +22,13 @@
     "osVersion": "Windows 11 ver 25H2",
     "peerTester": "",
     "registeredAt": "2026-03-03"
+  },
+  {
+    "name": "Scott",
+    "platform": "Mac M3",
+    "installMethod": "DMG",
+    "osVersion": "Tahoe 26.3",
+    "peerTester": "Scott",
+    "registeredAt": "2026-04-18"
   }
 ]
