@@ -38,5 +38,13 @@
     "osVersion": "26200.8246",
     "peerTester": "",
     "registeredAt": "2026-04-18"
+  },
+  {
+    "name": "Matthew Dowell",
+    "platform": "Ubuntu 24",
+    "installMethod": ".deb",
+    "osVersion": "Ubuntu 24",
+    "peerTester": "",
+    "registeredAt": "2026-04-18"
   }
 ]
