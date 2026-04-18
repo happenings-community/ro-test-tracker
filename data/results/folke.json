@@ -2,7 +2,7 @@
   {
     "stepId": 1.1,
     "result": "Pass",
-    "observations": "504 Gateway Time-out\nThe server didn't respond in time. ",
+    "observations": "Passed second try",
     "screenshots": null,
     "githubIssues": null
   },
