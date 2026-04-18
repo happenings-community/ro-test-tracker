@@ -30,5 +30,13 @@
     "osVersion": "Tahoe 26.3",
     "peerTester": "Scott",
     "registeredAt": "2026-04-18"
+  },
+  {
+    "name": "Folke",
+    "platform": "Windows 11",
+    "installMethod": ".exe",
+    "osVersion": "26200.8246",
+    "peerTester": "",
+    "registeredAt": "2026-04-18"
   }
 ]
