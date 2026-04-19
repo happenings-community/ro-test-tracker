@@ -36,7 +36,7 @@
   },
   {
     "stepId": 2.2,
-    "result": null,
+    "result": "Fail",
     "observations": null,
     "screenshots": null,
     "githubIssues": null
