@@ -22,8 +22,8 @@
   },
   {
     "stepId": 1.4,
-    "result": null,
-    "observations": null,
+    "result": "Pass",
+    "observations": "I don't see any connection indicator, only a green circel",
     "screenshots": null,
     "githubIssues": null
   },
