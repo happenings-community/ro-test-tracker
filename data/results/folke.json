@@ -85,7 +85,7 @@
   },
   {
     "stepId": 3.4,
-    "result": null,
+    "result": "Fail",
     "observations": null,
     "screenshots": null,
     "githubIssues": null
