@@ -93,7 +93,7 @@
   {
     "stepId": 4.1,
     "result": "Fail",
-    "observations": "There was no \"Create\" button, only \"Requests\" and no \"New request\"",
+    "observations": "There was no \"Create\" button, only \"Requests\" and no \"New request\" Fail to initialize Request",
     "screenshots": null,
     "githubIssues": null
   },
