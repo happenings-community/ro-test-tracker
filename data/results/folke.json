@@ -15,7 +15,7 @@
   },
   {
     "stepId": 1.3,
-    "result": "Partial",
+    "result": "Pass",
     "observations": "Starting lair keystone",
     "screenshots": null,
     "githubIssues": null
