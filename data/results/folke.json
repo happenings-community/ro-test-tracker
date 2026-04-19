@@ -23,7 +23,7 @@
   {
     "stepId": 1.4,
     "result": "Pass",
-    "observations": "I don't see any connection indicator, only a green circel",
+    "observations": "I don't see any connection indicator, only a green circle",
     "screenshots": null,
     "githubIssues": null
   },
