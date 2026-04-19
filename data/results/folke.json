@@ -36,7 +36,7 @@
   },
   {
     "stepId": 2.2,
-    "result": "Fail",
+    "result": "Partial",
     "observations": "Failed to create user: Conductor returned an error while using a ConductorApi: CellDisabled(CellId(DnaHash(uhC0kiKzmAsFVJ_WyGlesnQX_UhuZdd02XOTHsqHpSAAj9HZFcUnN), AgentPubKey(uhCAkednVDtM3Au-i5KjKXE1pdl3Sw6XWqTdyeGQcTZRt-kVQjSPa)))",
     "screenshots": null,
     "githubIssues": null
