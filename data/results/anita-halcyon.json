@@ -43,8 +43,8 @@
   },
   {
     "stepId": 2.3,
-    "result": null,
-    "observations": null,
+    "result": "Pass",
+    "observations": "With markdown, would we need to find this out?",
     "screenshots": null,
     "githubIssues": null
   },
