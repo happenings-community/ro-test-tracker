@@ -71,8 +71,8 @@
   },
   {
     "stepId": 3.2,
-    "result": null,
-    "observations": null,
+    "result": "Skipped",
+    "observations": "Normally, folks only add skills into the Offers.  ",
     "screenshots": null,
     "githubIssues": null
   },
