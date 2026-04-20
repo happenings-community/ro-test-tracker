@@ -46,5 +46,13 @@
     "osVersion": "Ubuntu 24",
     "peerTester": "",
     "registeredAt": "2026-04-18"
+  },
+  {
+    "name": "Anita Halcyon",
+    "platform": "Mac M1 - 8GB",
+    "installMethod": "Homebrew",
+    "osVersion": "Tahoe 26.3",
+    "peerTester": "Sam Turner",
+    "registeredAt": "2026-04-20"
   }
 ]
