@@ -2,25 +2,25 @@
   {
     "stepId": 1.1,
     "testArea": "Installation & First Launch",
-    "stepAction": "Go to the release page:|https://github.com/happenings-community/requests-and-offers/releases/latest|Mac users: choose Homebrew (recommended \u2014 see install guide) OR the DMG matching your chip (Apple Silicon = arm64, Intel = x64)|Windows: download the .exe file|Linux: choose AppImage (universal) or .deb (Debian/Ubuntu)",
+    "stepAction": "Go to the release page:|https://github.com/happenings-community/requests-and-offers/releases/latest|Mac users: choose Homebrew (recommended — see install guide) OR the DMG matching your chip (Apple Silicon = arm64, Intel = x64)|Windows: download the .exe file|Linux: choose AppImage (universal) or .deb (Debian/Ubuntu)",
     "lookFor": "Download completes without errors.|Note the file size and how long it took."
   },
   {
     "stepId": 1.2,
     "testArea": "Installation & First Launch",
-    "stepAction": "Install the app for your platform:|Mac DMG: open the .dmg, drag the app icon into your Applications folder|Mac Homebrew: run 'brew tap happenings-community/requests-and-offers' then 'brew install --cask requests-and-offers'|Windows: right-click the .exe \u2192 'Run as administrator' \u2192 follow the wizard|Linux AppImage: run 'chmod +x' on the file, then double-click to run",
-    "lookFor": "Installation completes without errors.|Note any security warnings:|Mac: Gatekeeper \"unidentified developer\" \u2192 fix via System Settings \u2192 Privacy & Security \u2192 Open Anyway|Windows: SmartScreen warning \u2192 click \"More info\" \u2192 \"Run anyway\""
+    "stepAction": "Install the app for your platform:|Mac DMG: open the .dmg, drag the app icon into your Applications folder|Mac Homebrew: run 'brew tap happenings-community/requests-and-offers' then 'brew install --cask requests-and-offers'|Windows: right-click the .exe → 'Run as administrator' → follow the wizard|Linux AppImage: run 'chmod +x' on the file, then double-click to run",
+    "lookFor": "Installation completes without errors.|Note any security warnings:|Mac: Gatekeeper \"unidentified developer\" → fix via System Settings → Privacy & Security → Open Anyway|Windows: SmartScreen warning → click \"More info\" → \"Run anyway\""
   },
   {
     "stepId": 1.3,
     "testArea": "Installation & First Launch",
-    "stepAction": "Launch the app for the first time:|Mac: open Finder \u2192 Applications \u2192 double-click \"Requests and Offers\" (or Cmd+Space, type the name)|Windows: find \"Requests and Offers\" in your Start menu|Linux: find it in your applications menu, or run from terminal",
+    "stepAction": "Launch the app for the first time:|Mac: open Finder → Applications → double-click \"Requests and Offers\" (or Cmd+Space, type the name)|Windows: find \"Requests and Offers\" in your Start menu|Linux: find it in your applications menu, or run from terminal",
     "lookFor": "App opens without crashing.|You should see a loading screen or landing page.|Note how long it takes to open and anything unusual."
   },
   {
     "stepId": 1.4,
     "testArea": "Installation & First Launch",
-    "stepAction": "Look for the connection status indicator in the navigation bar at the top of the app.|Wait for it to change \u2014 this may take a moment.",
+    "stepAction": "Look for the connection status indicator in the navigation bar at the top of the app.|Wait for it to change — this may take a moment.",
     "lookFor": "Status changes to 'Connected'.|Time how long this takes from launch (count seconds or use a stopwatch).|Note if it stays on 'Connecting' for a long time or never connects."
   },
   {
@@ -38,32 +38,32 @@
   {
     "stepId": 2.3,
     "testArea": "Profile Creation",
-    "stepAction": "In the bio/description field, test markdown by typing:|**bold text**|*italic text*|A list: type each on a new line:|- Item one|- Item two|(See the Quick Reference panel above for more examples to copy-paste)",
-    "lookFor": "Text is accepted in the field.|The markdown won't render yet \u2014 that happens after you save.|Just confirm the field accepts the special characters."
+    "stepAction": "Now we'll test that the bio field handles formatting properly.|Copy the sample below into the bio field, then change the placeholder text (in square brackets) to your own details.|Don't worry about what the asterisks, hashes and brackets do — that's what we're testing!|SAMPLE (copy this):|I'm **[your name or what you do]** based in *[your location]*.|### A bit about me|- I'm interested in [something you care about]|- I can help with [something you offer]|- You can reach me via [how to contact you]|Find out more at [Holochain](https://holochain.org)",
+    "lookFor": "The field accepts everything you pasted, including the asterisks, hashes and brackets.|The formatting won't look pretty yet — it becomes properly styled text after you save in step 2.5.|Note any special characters that get rejected or stripped."
   },
   {
     "stepId": 2.4,
     "testArea": "Profile Creation",
-    "stepAction": "Fill in any other optional fields shown on the profile form.|These might include: location, contact info, skills, or other details.|Enter realistic test data.",
+    "stepAction": "Fill in any other optional fields shown on the profile form.|These might include: location, contact info, skills, or other details.|You can use short placeholder text — e.g. 'test location', 'test@example.com'.",
     "lookFor": "All optional fields accept input without errors.|Note which fields are available and whether any have dropdowns, checkboxes, or other special inputs."
   },
   {
     "stepId": 2.5,
     "testArea": "Profile Creation",
     "stepAction": "Click the Save button to save your new profile.",
-    "lookFor": "Profile saves successfully.|You should see a confirmation or be taken to your profile view.|Check markdown rendering: **bold** shows bold, *italics* show italic, list shows as bullets.|Note any formatting that doesn't render as expected."
+    "lookFor": "Profile saves successfully.|You should see a confirmation or be taken to your profile view.|Your bio should now look properly formatted:|**bold** appears bold|*italic* appears italic|### A bit about me becomes a larger heading|The bulleted list appears as bullets|[Holochain](https://holochain.org) becomes a clickable link|Note anything that doesn't render as expected."
   },
   {
     "stepId": 3.1,
     "testArea": "Profile Editing",
-    "stepAction": "Navigate to 'My Profile' \u2014 look in the main menu or navigation bar for:|A profile link|Your name|A user icon",
+    "stepAction": "Navigate to 'My Profile' — look in the main menu or navigation bar for:|A profile link|Your name|A user icon",
     "lookFor": "Your existing profile loads with all the data from Test 2.|Everything should match what you saved."
   },
   {
     "stepId": 3.2,
     "testArea": "Profile Editing",
-    "stepAction": "Click 'Edit' to enter edit mode.|In the bio field, add more markdown \u2014 try a heading:|### My Skills|And a numbered list:|1. First skill|2. Second skill|(Copy from Quick Reference if needed)",
-    "lookFor": "Edit form loads with your existing data pre-filled.|The bio field should show your original markdown.|You should be able to add to it."
+    "stepAction": "Click 'Edit' to enter edit mode.|You'll add a bit more to your bio to test that editing works.|Paste this at the bottom of your existing bio, then change the placeholder text in square brackets:|### Recent updates|1. [Something you did recently]|2. [Something you're working on now]",
+    "lookFor": "The edit form loads with your existing bio already filled in.|You can add to it without losing what's already there."
   },
   {
     "stepId": 3.3,
@@ -75,7 +75,7 @@
     "stepId": 3.4,
     "testArea": "Profile Editing",
     "stepAction": "Save your changes by clicking the Save/Update button.",
-    "lookFor": "Changes save successfully.|Updated markdown renders correctly \u2014 heading appears larger, numbered list displays properly.|All other changes are reflected."
+    "lookFor": "Changes save successfully.|Your new heading appears larger, and your numbered list displays properly (1. and 2. as numbered items).|Your original bio content is still there and still formatted correctly.|Any other field changes are reflected too."
   },
   {
     "stepId": 4.1,
@@ -86,31 +86,31 @@
   {
     "stepId": 4.2,
     "testArea": "Creating a Request",
-    "stepAction": "In the title field, enter a descriptive test title.|Example: 'Looking for a web designer'",
+    "stepAction": "In the title field, paste this sample title:|Test request — looking for a web designer|(Feel free to change it to something else if you prefer.)",
     "lookFor": "Title field accepts your input.|Note any character limits."
   },
   {
     "stepId": 4.3,
     "testArea": "Creating a Request",
-    "stepAction": "In the description field, test markdown:|### What I Need|**Urgently** looking for someone with:|- Design skills|- HTML/CSS experience|(Copy from Quick Reference if needed)",
-    "lookFor": "Description field accepts markdown text.|Note if there's a rich text editor or just a plain text box."
+    "stepAction": "Now fill in the description. Copy the sample below into the description field.|You can leave it as-is or change the placeholder text in square brackets — it doesn't matter for this test.|SAMPLE (copy this):|Looking for someone who can help with [a small project or task].|### What I need|- [First thing you need]|- [Second thing you need]|Happy to discuss timing and details.",
+    "lookFor": "Description field accepts your input.|Note if there's a rich text editor or just a plain text box."
   },
   {
     "stepId": 4.4,
     "testArea": "Creating a Request",
     "stepAction": "Look for a service type selector or category dropdown.|If present, select an appropriate option.|If not available, note this in your observations.",
-    "lookFor": "Service type selector works \u2014 options display and are selectable.|OR note \"No service types available\" if missing/empty."
+    "lookFor": "Service type selector works — options display and are selectable.|OR note \"No service types available\" if missing/empty."
   },
   {
     "stepId": 4.5,
     "testArea": "Creating a Request",
     "stepAction": "Click Save to create your request.",
-    "lookFor": "Request saves.|Check markdown renders properly: heading is styled, bold is bold, list shows as bullets.|You should see a confirmation or be taken to the detail view."
+    "lookFor": "Request saves successfully.|Your title and description appear as you wrote them.|You should see a confirmation or be taken to the detail view."
   },
   {
     "stepId": 4.6,
     "testArea": "Creating a Request",
-    "stepAction": "Check your request appears in TWO places:|1. Navigate to the main Requests list (menu \u2192 Requests)|2. Check My Listings (if available)",
+    "stepAction": "Check your request appears in TWO places:|1. Navigate to the main Requests list (menu → Requests)|2. Check My Listings (if available)",
     "lookFor": "Your request is visible in BOTH the Requests list AND My Listings.|Title and description match what you entered."
   },
   {
@@ -122,14 +122,14 @@
   {
     "stepId": 5.2,
     "testArea": "Creating an Offer",
-    "stepAction": "Enter a title for your offer.|Example: 'Offering facilitation services' or 'Web development available'",
+    "stepAction": "In the title field, paste this sample title:|Test offer — offering facilitation services|(Feel free to change it to something else if you prefer.)",
     "lookFor": "Title field accepts your input."
   },
   {
     "stepId": 5.3,
     "testArea": "Creating an Offer",
-    "stepAction": "In the description, use markdown:|**bold text**, *italic text*|### A Heading|- Bullet item one|- Bullet item two|(Copy from Quick Reference if needed)",
-    "lookFor": "Description field accepts markdown text."
+    "stepAction": "Now fill in the description. Copy the sample below into the description field.|You can leave it as-is or change the placeholder text in square brackets — it doesn't matter for this test.|SAMPLE (copy this):|Available to help with [the kind of work you'd offer].|### What I can bring|- [First skill or thing you'd offer]|- [Second skill or thing you'd offer]|Get in touch to chat about it.",
+    "lookFor": "Description field accepts your input."
   },
   {
     "stepId": 5.4,
@@ -141,12 +141,12 @@
     "stepId": 5.5,
     "testArea": "Creating an Offer",
     "stepAction": "Click Save to create your offer.",
-    "lookFor": "Offer saves.|Markdown renders correctly in the detail view."
+    "lookFor": "Offer saves successfully.|Your title and description appear as you wrote them."
   },
   {
     "stepId": 5.6,
     "testArea": "Creating an Offer",
-    "stepAction": "Check your offer appears in TWO places:|1. Main Offers list (menu \u2192 Offers)|2. My Listings",
+    "stepAction": "Check your offer appears in TWO places:|1. Main Offers list (menu → Offers)|2. My Listings",
     "lookFor": "Offer visible in BOTH the Offers list and My Listings."
   },
   {
@@ -176,13 +176,13 @@
   {
     "stepId": 7.1,
     "testArea": "Search Functionality",
-    "stepAction": "Go to the Requests page.|Find the search box.|Type a keyword from one of your request titles (from Test 4).",
+    "stepAction": "Go to the Requests page.|Find the search box.|Type a keyword from one of your request titles (from Test 4).|For example, if you used the sample title, try searching 'designer'.",
     "lookFor": "Search returns results containing your keyword.|Note how fast results appear.|Note whether search matches title, description, or both."
   },
   {
     "stepId": 7.2,
     "testArea": "Search Functionality",
-    "stepAction": "Go to the Offers page.|Search for a keyword from one of your offer titles (from Test 5).",
+    "stepAction": "Go to the Offers page.|Search for a keyword from one of your offer titles (from Test 5).|For example, if you used the sample title, try searching 'facilitation'.",
     "lookFor": "Search returns your offer in the results."
   },
   {
@@ -206,13 +206,13 @@
   {
     "stepId": 8.1,
     "testArea": "Peer Discovery (KEY TEST)",
-    "stepAction": "\u26a0\ufe0f This test requires TWO people online at the same time.|Coordinate with your testing partner:|1. Agree a specific time to both be online|2. Both launch the app|3. Both wait for 'Connected' status|Do NOT proceed until both of you are connected.",
+    "stepAction": "⚠️ This test requires TWO people online at the same time.|Coordinate with your testing partner:|1. Agree a specific time to both be online|2. Both launch the app|3. Both wait for 'Connected' status|Do NOT proceed until both of you are connected.",
     "lookFor": "Both testers have the app running and showing 'Connected'.|Note the time you both came online."
   },
   {
     "stepId": 8.2,
     "testArea": "Peer Discovery (KEY TEST)",
-    "stepAction": "Confirm both testers have completed Tests 2-5:|\u2713 Both have a profile created|\u2713 Both have at least one request|\u2713 Both have at least one offer|If either is missing something, create it now before continuing.",
+    "stepAction": "Confirm both testers have completed Tests 2-5:|✓ Both have a profile created|✓ Both have at least one request|✓ Both have at least one offer|If either is missing something, create it now before continuing.",
     "lookFor": "Both testers confirm they have profiles, requests, and offers.|These must exist before testing discovery."
   },
   {
@@ -224,7 +224,7 @@
   {
     "stepId": 8.4,
     "testArea": "Peer Discovery (KEY TEST)",
-    "stepAction": "Tester A: Navigate to 'All Users'.|Look through the list for Tester B's profile/username.|If not visible, wait 2-3 minutes and refresh.|Keep checking \u2014 peer discovery can take time.",
+    "stepAction": "Tester A: Navigate to 'All Users'.|Look through the list for Tester B's profile/username.|If not visible, wait 2-3 minutes and refresh.|Keep checking — peer discovery can take time.",
     "lookFor": "Can Tester A see Tester B's profile?|Record YES or NO.|If yes, note how long it took to appear."
   },
   {
@@ -242,13 +242,13 @@
   {
     "stepId": 8.7,
     "testArea": "Peer Discovery (KEY TEST)",
-    "stepAction": "Tester B: Now repeat the same checks:|Go to All Users \u2014 can you see Tester A?|Go to Requests \u2014 can you see Tester A's request?|Go to Offers \u2014 can you see Tester A's offer?",
+    "stepAction": "Tester B: Now repeat the same checks:|Go to All Users — can you see Tester A?|Go to Requests — can you see Tester A's request?|Go to Offers — can you see Tester A's offer?",
     "lookFor": "Can Tester B see Tester A's data?|IMPORTANT: Note if discovery is symmetric (both see each other) or asymmetric (one sees the other but not vice versa)."
   },
   {
     "stepId": 8.8,
     "testArea": "Peer Discovery (KEY TEST)",
-    "stepAction": "While both still online:|One tester creates a BRAND NEW listing (request or offer).|The other tester watches their list to see if it appears.|Don't refresh \u2014 just watch.",
+    "stepAction": "While both still online:|One tester creates a BRAND NEW listing (request or offer).|The other tester watches their list to see if it appears.|Don't refresh — just watch.",
     "lookFor": "Does the new listing appear for the other tester?|How long does it take?|Does it need a page refresh or appear automatically?|This tests real-time sync."
   },
   {
@@ -260,20 +260,20 @@
   {
     "stepId": 9.2,
     "testArea": "Organizations",
-    "stepAction": "Fill in the organization details.|Look specifically for a 'Contact Person' field \u2014 this is new in v0.4.0.|Fill in all available fields with test data.",
+    "stepAction": "Fill in the organization details.|Use short placeholder text for name and other fields (e.g. 'Test Org').|Look specifically for the 'Contact Person' field.|Fill in all available fields.",
     "lookFor": "All fields accept input.|Contact Person field is present and functional.|Note if it's a text field, dropdown, or links to user profiles."
   },
   {
     "stepId": 9.3,
     "testArea": "Organizations",
-    "stepAction": "In the organization description, use markdown:|**bold**, *italic*, ### heading, - bullet list|Copy from Quick Reference if needed.",
-    "lookFor": "Description field accepts markdown."
+    "stepAction": "Now fill in the organization description. Copy the sample below.|You can leave it as-is or change the placeholder text in square brackets — it doesn't matter for this test.|SAMPLE (copy this):|[Test Org] is a [short description of what the org does].|### What we do|- [First activity or focus area]|- [Second activity or focus area]|Find us at [example link](https://example.org)",
+    "lookFor": "Description field accepts your input."
   },
   {
     "stepId": 9.4,
     "testArea": "Organizations",
     "stepAction": "Save the organization and view it.",
-    "lookFor": "Organization saves and displays correctly.|Markdown renders in description.|Contact Person info is shown.|All data matches what you entered."
+    "lookFor": "Organization saves and displays correctly.|Your description appears as you wrote it.|Contact Person info is shown.|All data matches what you entered."
   },
   {
     "stepId": 9.5,
@@ -291,7 +291,7 @@
     "stepId": 10.2,
     "testArea": "Service Types",
     "stepAction": "Browse through the available categories.|Click on different types to see if they expand or show details.",
-    "lookFor": "Categories are browsable and interactive.|Note the user experience \u2014 is it clear how these relate to listings?"
+    "lookFor": "Categories are browsable and interactive.|Note the user experience — is it clear how these relate to listings?"
   },
   {
     "stepId": 10.3,
@@ -309,12 +309,12 @@
     "stepId": 11.2,
     "testArea": "Navigation & UI",
     "stepAction": "Resize the app window to narrow width:|Drag the window edge to make it narrower.|Observe how the layout adapts.",
-    "lookFor": "Layout adjusts responsively \u2014 content should reflow, not overflow or overlap.|Note any elements that break, overlap, or become unusable."
+    "lookFor": "Layout adjusts responsively — content should reflow, not overflow or overlap.|Note any elements that break, overlap, or become unusable."
   },
   {
     "stepId": 11.3,
     "testArea": "Navigation & UI",
-    "stepAction": "At narrow width, look for a hamburger menu (\u2630 icon).|Click/tap it to open.",
+    "stepAction": "At narrow width, look for a hamburger menu (☰ icon).|Click/tap it to open.",
     "lookFor": "Hamburger menu appears and opens when clicked.|All navigation options are accessible.|Note if any items are missing compared to the full-width menu."
   },
   {
@@ -326,7 +326,7 @@
   {
     "stepId": 12.1,
     "testArea": "Network Resilience",
-    "stepAction": "While the app shows 'Connected':|Turn off your internet \u2014 toggle WiFi off or unplug ethernet.|Watch what the app does.",
+    "stepAction": "While the app shows 'Connected':|Turn off your internet — toggle WiFi off or unplug ethernet.|Watch what the app does.",
     "lookFor": "The app should detect disconnection.|Note: does the status change? How quickly?|Is there a visual indicator?"
   },
   {
