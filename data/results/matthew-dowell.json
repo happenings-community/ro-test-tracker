@@ -246,7 +246,7 @@
   },
   {
     "stepId": 8.2,
-    "result": null,
+    "result": "Skipped",
     "observations": null,
     "screenshots": null,
     "githubIssues": null
