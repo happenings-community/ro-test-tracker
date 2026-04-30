@@ -127,7 +127,7 @@
   },
   {
     "stepId": 4.6,
-    "result": null,
+    "result": "Partial",
     "observations": null,
     "screenshots": null,
     "githubIssues": null
