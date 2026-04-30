@@ -23,7 +23,7 @@
   {
     "stepId": 1.4,
     "result": "Pass",
-    "observations": null,
+    "observations": "took about 30 sec",
     "screenshots": null,
     "githubIssues": null
   },
