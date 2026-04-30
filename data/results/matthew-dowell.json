@@ -253,7 +253,7 @@
   },
   {
     "stepId": 8.3,
-    "result": null,
+    "result": "Skipped",
     "observations": null,
     "screenshots": null,
     "githubIssues": null
