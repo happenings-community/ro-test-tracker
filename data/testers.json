@@ -62,5 +62,13 @@
     "osVersion": "Windows 11 ver 25H2",
     "peerTester": "TBD",
     "registeredAt": "2026-04-30"
+  },
+  {
+    "name": "Rafael",
+    "platform": "Mac M2",
+    "installMethod": "Homebrew",
+    "osVersion": "Tahoe 26.4.1 (25E253)",
+    "peerTester": "uhCAky4sAkkBaEukEVzmacWQijs3l0GXN2j6xV81dZ95IKEfiseKX",
+    "registeredAt": "2026-04-30"
   }
 ]
