@@ -379,14 +379,14 @@
   },
   {
     "stepId": 12.1,
-    "result": null,
+    "result": "Fail",
     "observations": null,
     "screenshots": null,
     "githubIssues": null
   },
   {
     "stepId": 12.2,
-    "result": null,
+    "result": "Pass",
     "observations": null,
     "screenshots": null,
     "githubIssues": null
