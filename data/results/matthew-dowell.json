@@ -323,7 +323,7 @@
   },
   {
     "stepId": 9.5,
-    "result": null,
+    "result": "Pass",
     "observations": null,
     "screenshots": null,
     "githubIssues": null
