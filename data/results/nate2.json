@@ -92,7 +92,7 @@
   },
   {
     "stepId": 4.1,
-    "result": "Partial",
+    "result": "Skipped",
     "observations": null,
     "screenshots": null,
     "githubIssues": null
