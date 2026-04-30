@@ -183,7 +183,7 @@
   },
   {
     "stepId": 6.2,
-    "result": "Fail",
+    "result": "Pass",
     "observations": null,
     "screenshots": null,
     "githubIssues": null
