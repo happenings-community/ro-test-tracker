@@ -85,8 +85,8 @@
   },
   {
     "stepId": 3.4,
-    "result": null,
-    "observations": null,
+    "result": "Pass",
+    "observations": "\"Your profile has been updated successfully.\"",
     "screenshots": null,
     "githubIssues": null
   },
