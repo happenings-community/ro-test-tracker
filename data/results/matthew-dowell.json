@@ -316,8 +316,8 @@
   },
   {
     "stepId": 9.4,
-    "result": "Pass",
-    "observations": null,
+    "result": "Partial",
+    "observations": "Uh oh. I updated, and I couldn",
     "screenshots": null,
     "githubIssues": null
   },
