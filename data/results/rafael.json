@@ -29,8 +29,8 @@
   },
   {
     "stepId": 2.1,
-    "result": "Pass",
-    "observations": null,
+    "result": "Fail",
+    "observations": "easy and ",
     "screenshots": null,
     "githubIssues": null
   },
