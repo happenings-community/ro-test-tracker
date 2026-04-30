@@ -393,7 +393,7 @@
   },
   {
     "stepId": 12.3,
-    "result": null,
+    "result": "Skipped",
     "observations": null,
     "screenshots": null,
     "githubIssues": null
