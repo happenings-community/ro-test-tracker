@@ -120,7 +120,7 @@
   },
   {
     "stepId": 4.5,
-    "result": "Pass",
+    "result": "Partial",
     "observations": null,
     "screenshots": null,
     "githubIssues": null
