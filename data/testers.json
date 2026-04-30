@@ -54,5 +54,13 @@
     "osVersion": "Tahoe 26.3",
     "peerTester": "Sam Turner",
     "registeredAt": "2026-04-20"
+  },
+  {
+    "name": "Nate2",
+    "platform": "Windows 11",
+    "installMethod": ".exe",
+    "osVersion": "Windows 11 ver 25H2",
+    "peerTester": "TBD",
+    "registeredAt": "2026-04-30"
   }
 ]
