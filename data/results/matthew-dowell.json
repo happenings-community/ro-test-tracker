@@ -190,7 +190,7 @@
   },
   {
     "stepId": 6.3,
-    "result": "Fail",
+    "result": "Skipped",
     "observations": null,
     "screenshots": null,
     "githubIssues": null
