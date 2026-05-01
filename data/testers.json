@@ -70,5 +70,13 @@
     "osVersion": "Tahoe 26.4.1 (25E253)",
     "peerTester": "uhCAky4sAkkBaEukEVzmacWQijs3l0GXN2j6xV81dZ95IKEfiseKX",
     "registeredAt": "2026-04-30"
+  },
+  {
+    "name": "DaYa",
+    "platform": "Win 11",
+    "installMethod": ".exe",
+    "osVersion": "Win 11 25H2",
+    "peerTester": "",
+    "registeredAt": "2026-05-01"
   }
 ]
