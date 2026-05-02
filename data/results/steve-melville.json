@@ -30,7 +30,7 @@
   {
     "stepId": 2.1,
     "result": "Partial",
-    "observations": null,
+    "observations": "expected Preview mode for markdown fields, md buttons cause jump back to beginning of field, timezone selector allowed search but not select. I filed a bug report as prompted.",
     "screenshots": null,
     "githubIssues": null
   },
