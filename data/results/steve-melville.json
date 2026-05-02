@@ -93,7 +93,7 @@
   {
     "stepId": 4.1,
     "result": "Fail",
-    "observations": null,
+    "observations": "Create New Request button disabled pending my profile approval. Why should MY profile require SOMEONE ELSE's approval???",
     "screenshots": null,
     "githubIssues": null
   },
