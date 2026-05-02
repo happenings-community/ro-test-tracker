@@ -9,7 +9,7 @@
   {
     "stepId": 1.2,
     "result": "Partial",
-    "observations": null,
+    "observations": "I got the \"App is damaged\" message (as you anticipated).  The xattr command you provided worked.",
     "screenshots": null,
     "githubIssues": null
   },
