@@ -51,7 +51,7 @@
   {
     "stepId": 2.4,
     "result": "Partial",
-    "observations": null,
+    "observations": "timezone selector supported type-ahead search, but not select",
     "screenshots": null,
     "githubIssues": null
   },
