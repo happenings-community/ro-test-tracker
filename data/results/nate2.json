@@ -232,8 +232,8 @@
   },
   {
     "stepId": 7.5,
-    "result": null,
-    "observations": null,
+    "result": "Pass",
+    "observations": "\"No organizations match your search",
     "screenshots": null,
     "githubIssues": null
   },
