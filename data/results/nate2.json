@@ -92,7 +92,7 @@
   },
   {
     "stepId": 4.1,
-    "result": "Skipped",
+    "result": "Pass",
     "observations": null,
     "screenshots": null,
     "githubIssues": null
