@@ -219,7 +219,7 @@
   {
     "stepId": 7.3,
     "result": "Pass",
-    "observations": null,
+    "observations": "Searches username, display name (only, AFAICT)",
     "screenshots": null,
     "githubIssues": null
   },
