@@ -176,8 +176,8 @@
   },
   {
     "stepId": 6.1,
-    "result": null,
-    "observations": null,
+    "result": "Pass",
+    "observations": "Edit, delete",
     "screenshots": null,
     "githubIssues": null
   },
