@@ -102,5 +102,13 @@
     "osVersion": "Tahoe 26.3",
     "peerTester": "ThiagoF",
     "registeredAt": "2026-05-04"
+  },
+  {
+    "name": "ThiagoF",
+    "platform": "Debian 12",
+    "installMethod": ".deb",
+    "osVersion": "",
+    "peerTester": "ThiagoF2",
+    "registeredAt": "2026-05-04"
   }
 ]
