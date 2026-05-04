@@ -16,7 +16,7 @@
   {
     "stepId": 1.3,
     "result": "Pass",
-    "observations": null,
+    "observations": "asked for password or not password and i chose not password",
     "screenshots": null,
     "githubIssues": null
   },
