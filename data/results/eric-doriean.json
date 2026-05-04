@@ -9,7 +9,7 @@
   {
     "stepId": 1.2,
     "result": null,
-    "observations": null,
+    "observations": "ran sudo dpkg -i requests-and-offers.happenings-community.kangaroo-electron_0.5.2_amd64.deb and all looked fine",
     "screenshots": null,
     "githubIssues": null
   },
