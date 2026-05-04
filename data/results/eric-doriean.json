@@ -29,7 +29,7 @@
   },
   {
     "stepId": 2.1,
-    "result": "Partial",
+    "result": "Fail",
     "observations": null,
     "screenshots": null,
     "githubIssues": null
