@@ -57,7 +57,7 @@
   },
   {
     "stepId": 2.5,
-    "result": null,
+    "result": "Partial",
     "observations": null,
     "screenshots": null,
     "githubIssues": null
