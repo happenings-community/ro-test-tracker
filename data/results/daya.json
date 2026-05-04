@@ -156,7 +156,7 @@
   {
     "stepId": 5.4,
     "result": "Pass",
-    "observations": null,
+    "observations": "It is not possible to create an offer or service without choosing one of the predefined Service Type categories. This is unclear and would be maybe good to keep an option to create a category or a more miscelanous category.",
     "screenshots": null,
     "githubIssues": null
   },
