@@ -190,7 +190,7 @@
   },
   {
     "stepId": 6.3,
-    "result": "Pass",
+    "result": "Fail",
     "observations": "Not possible to edit only delete, seems like how it should be",
     "screenshots": null,
     "githubIssues": null
