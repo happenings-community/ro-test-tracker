@@ -155,7 +155,7 @@
   },
   {
     "stepId": 5.4,
-    "result": null,
+    "result": "Pass",
     "observations": null,
     "screenshots": null,
     "githubIssues": null
