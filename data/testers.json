@@ -94,5 +94,13 @@
     "osVersion": "24.04 LTS",
     "peerTester": "",
     "registeredAt": "2026-05-04"
+  },
+  {
+    "name": "ThiagoF2",
+    "platform": "Mac M1",
+    "installMethod": "Homebrew",
+    "osVersion": "Tahoe 26.3",
+    "peerTester": "ThiagoF",
+    "registeredAt": "2026-05-04"
   }
 ]
