@@ -23,7 +23,7 @@
   {
     "stepId": 1.4,
     "result": "Pass",
-    "observations": null,
+    "observations": "first run showed: Initializing Application Runtime\n\nwhich got all green. then app loaded and showed green connected,\n\n",
     "screenshots": null,
     "githubIssues": null
   },
