@@ -35,7 +35,7 @@
     "ROUND_VERSION": "v0.6.0-alpha.1",
 
     "GH_ORG": "happenings-community",
-    "GH_APP_ID": "",
+    "GH_APP_ID": "5151079",
     "TRACKER_REPO": "ro-test-tracker",
     "REPORT_REPO": "requests-and-offers",
     "REPORT_CATEGORY": "Release feedback",
