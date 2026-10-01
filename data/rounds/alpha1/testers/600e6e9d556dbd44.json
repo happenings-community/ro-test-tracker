@@ -4,5 +4,10 @@
   "os": "26.6.2 (25G83)",
   "network": "Network Seed: alpha1-iroh-2026\n🔬 DNA: uhC0kSahvUB3Yh--bFw-gyKZqvDuO4lplOFjhVIlP40H9F88TUXt3",
   "registeredAt": "2026-10-01",
-  "results": {}
+  "results": {
+    "1.2": {
+      "result": "Fail",
+      "notes": ""
+    }
+  }
 }
