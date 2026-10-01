@@ -949,7 +949,7 @@ body {
       <div class="form-group">
         <label>Network details</label>
         <textarea id="regNetwork" rows="2" placeholder="Network seed and DNA hash"></textarea>
-        <div class="hint">Optional. Click the connection status dot in the app and copy the network seed and DNA hash it shows. You can change this on any report.</div>
+        <div class="hint">Optional. Click the connection status dot in the app and copy the network seed and DNA hash it shows. You can change this on any report.<br><strong>Reports are public.</strong> Fine for the release's own test network; if you are on a network your group set up with its own seed, leave this empty.</div>
       </div>
       <button class="btn-primary" id="registerBtn" onclick="handleRegister()">Start testing</button>
     </div>
@@ -1024,7 +1024,7 @@ body {
     <label class="shot-add">&#x1f4f7; Add screenshots<input type="file" id="fShots" accept="image/png,image/jpeg,image/webp" multiple onchange="addShots(this.files); this.value='';"></label>
 
     <label>Network details</label>
-    <div class="field-hint">Useful when you cannot see another member. Network seed and DNA hash from the connection status dot.</div>
+    <div class="field-hint">Useful when you cannot see another member. Network seed and DNA hash from the connection status dot. <strong>This report is public:</strong> leave it out if you are on a network your group set up with its own seed.</div>
     <textarea id="fNetwork" rows="2"></textarea>
 
     <label>Severity</label>

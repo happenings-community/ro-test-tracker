@@ -69,8 +69,24 @@ Push to `main`. The workflow runs the API tests, then `wrangler deploy`. It only
 `worker/`, `public/`, `wrangler.jsonc` or the workflow change, so the App's own commits of
 results and screenshots do not redeploy anything.
 
-Repository secrets: `CLOUDFLARE_API_TOKEN` (template *Edit Cloudflare Workers*) and
-`CLOUDFLARE_ACCOUNT_ID`.
+Repository secrets: `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`.
+
+The token is an **Account API token** named `ro-test-tracker deploy` (Manage account →
+Account API tokens), so deploys do not depend on any one person's login. It has two
+policies and nothing else:
+
+| Scope | Permissions |
+|---|---|
+| Entire account | Workers Scripts: Edit, Account Settings: Read |
+| `happenings.community` | Workers Routes: Edit |
+
+Zone permissions such as Workers Routes only appear in a policy scoped to domains, not one
+scoped to the whole account; without it the deploy uploads the Worker and then fails on
+`/zones/…/workers/routes`. The *Edit Cloudflare Workers* template ticks far more (KV, R2,
+Pages, Containers and others); none are needed.
+
+`gh secret set` shows nothing as you paste. A secret saved before the paste lands is empty,
+and the deploy then reports that `CLOUDFLARE_API_TOKEN` is not set.
 
 Tests, locally: `node --test --test-concurrency=1 test/api.test.mjs`. The browser test
 (`test/browser.test.mjs`) needs Playwright.
@@ -164,4 +180,9 @@ tester fail the same step and check it arrives as a comment. Delete the test dis
 
 1. Delete the old Worker `ro-test-proxy`
 2. Delete both expired `ro-test-tracker` tokens on GitHub (fine-grained and classic)
-3. Remove the old GitHub Pages files (`index.html`, `CNAME`) from the repo root
+3. Remove the old GitHub Pages files (`index.html`, `CNAME`, root logo) from the repo
+4. Narrow the deploy token's account policy from Entire account to **Specified Workers →
+   ro-test-tracker**, so it cannot touch the design site. Then run the deploy workflow by
+   hand (Actions → Deploy → Run workflow) to confirm it still works
+
+Done on 1 October 2026, except step 4.
