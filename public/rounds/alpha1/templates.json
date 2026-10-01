@@ -1,0 +1,302 @@
+[
+ {
+  "stepId": 1.2,
+  "testArea": "Installation & First Launch",
+  "stepAction": "Install the app for your platform:|Mac with Homebrew: brew install --cask happenings-community/requests-and-offers/requests-and-offers|Mac DMG: open the .dmg, drag the app into Applications, then run once in Terminal: xattr -dr com.apple.quarantine \"/Applications/Requests and Offers.app\"|Windows: run the setup .exe and follow the wizard|Linux: install the .deb, or make the AppImage executable (chmod +x) and run it|If you installed alpha.1 before 25 September, follow the clear-out steps in the release notes first.|In your result, say which platform you used: Mac Apple Silicon, Mac Intel, Windows, Linux .deb or Linux AppImage.",
+  "lookFor": "The app installs without errors."
+ },
+ {
+  "stepId": 1.4,
+  "testArea": "Installation & First Launch",
+  "stepAction": "Look for the connection status dot in the navigation bar and wait for it to settle.|Click it to open the network details. Keep the Network Seed and DNA for step 20.1.",
+  "lookFor": "The popup shows a Network Seed, a DNA, a Bootstrap Server and a Signal Server.|No line in the popup is marked as a mismatch."
+ },
+ {
+  "stepId": 2.2,
+  "testArea": "Profile Creation",
+  "stepAction": "In the profile form, fill in Given name, Family name and Nickname. Choose a Type (Advocate or Creator).|Then clear Given name, type only spaces in it, and try to save.",
+  "lookFor": "Given name, Family name and Nickname are separate fields, all required.|Saving with only spaces in Given name is refused with a message."
+ },
+ {
+  "stepId": 2.4,
+  "testArea": "Profile Creation",
+  "stepAction": "Fill in Email, Phone, Location and Time zone.|For Time zone, type 'Lond' and choose a result.",
+  "lookFor": "A notice near Email says your email and phone are visible to all members of the network.|The time zone list closes once you choose a result, and shows your choice.|Every field accepts your input."
+ },
+ {
+  "stepId": 9.2,
+  "testArea": "Organizations",
+  "stepAction": "Fill in the organisation form: Name, Full Legal Name, Email, Vision/Mission and Location (all required).|In URLs, enter two web addresses separated by a comma.",
+  "lookFor": "All required fields accept input.|After saving (9.4), both URLs appear on the organisation page."
+ },
+ {
+  "stepId": 13.1,
+  "testArea": "Joining & Approval",
+  "stepAction": "One tester must be an administrator.|Tester B: on a fresh install with no profile, create a profile and save it.",
+  "lookFor": "Tester B's profile status shows as pending approval."
+ },
+ {
+  "stepId": 13.2,
+  "testArea": "Joining & Approval",
+  "stepAction": "Tester B (still pending): open any request that is not yours.",
+  "lookFor": "A notice says your account is pending approval before you can respond.|You cannot register interest: the Interested button is absent, or using it is refused."
+ },
+ {
+  "stepId": 13.3,
+  "testArea": "Joining & Approval",
+  "stepAction": "Tester B (still pending): try to create a request.",
+  "lookFor": "Creating a request is refused until you are approved, with a message saying why."
+ },
+ {
+  "stepId": 13.4,
+  "testArea": "Joining & Approval",
+  "stepAction": "Administrator: open the admin panel (Admin in the navigation bar, or Alt+A). On the Admin Dashboard, under Moderation Queue, open Pending Users and click Approve for Tester B.",
+  "lookFor": "Tester B appears under Pending Users.|After Approve, Tester B is no longer in the list."
+ },
+ {
+  "stepId": 13.5,
+  "testArea": "Joining & Approval",
+  "stepAction": "Tester B: open a request that is not yours.",
+  "lookFor": "The pending notice has gone.|You can register interest."
+ },
+ {
+  "stepId": 13.6,
+  "testArea": "Joining & Approval",
+  "stepAction": "Administrator: if a third test profile is available, click Reject for it instead. That tester then opens a request that is not theirs.",
+  "lookFor": "The rejected tester sees their status as rejected.|The rejected tester can take no action in the app: no listings, no interest and no proposals."
+ },
+ {
+  "stepId": 14.1,
+  "testArea": "Names & Profile Details",
+  "stepAction": "Edit your profile and set Family name to a single dot ( . ). Save. Look at your name in the navigation bar, All Users and one of your listings.",
+  "lookFor": "The dot is not shown anywhere your name appears."
+ },
+ {
+  "stepId": 14.2,
+  "testArea": "Names & Profile Details",
+  "stepAction": "Edit your profile and use names with accents or other scripts, for example: Zoë, José, 山田, Анна, محمد. Save, then look at your name in All Users and on one of your listings.",
+  "lookFor": "Every character displays correctly.|Right-to-left text displays the right way round."
+ },
+ {
+  "stepId": 14.3,
+  "testArea": "Names & Profile Details",
+  "stepAction": "Edit your profile with a Given name of 60 or more characters and a long Nickname. Save, then look at the navigation bar, All Users and a listing card.",
+  "lookFor": "Either the form refuses the length with a message, or the long name displays without overflowing or overlapping anything."
+ },
+ {
+  "stepId": 14.4,
+  "testArea": "Names & Profile Details",
+  "stepAction": "Two testers online at the same time: Tester A and Tester B.|Tester A: open Tester B's profile.",
+  "lookFor": "Tester B's email and phone are shown, as the profile form said they would be.|Nothing else private is shown."
+ },
+ {
+  "stepId": 15.1,
+  "testArea": "Listing Form Details",
+  "stepAction": "Create a request. In Links, type https://example.org and press Return.|Type https://example.net and do NOT press Return. Click save.",
+  "lookFor": "Pressing Return adds the first link as a tag and does not submit the form.|Saving with the second link still typed is refused, with a message that a link has been typed but not added."
+ },
+ {
+  "stepId": 15.2,
+  "testArea": "Listing Form Details",
+  "stepAction": "Press Return on the second link, then save the request.",
+  "lookFor": "Both links appear under Related Links on the request page."
+ },
+ {
+  "stepId": 15.3,
+  "testArea": "Listing Form Details",
+  "stepAction": "In a new request's Description, paste more than 1,000 characters.",
+  "lookFor": "The counter shows characters used out of 1000.|Text beyond 1,000 characters is not saved: it is either blocked as you type or refused on save with a message."
+ },
+ {
+  "stepId": 15.4,
+  "testArea": "Listing Form Details",
+  "stepAction": "In the Description, use the formatting buttons above the field, then switch to Preview and back.",
+  "lookFor": "Each button inserts its formatting.|Preview shows the formatted text.|Switching back keeps everything you typed, and the form does not jump when you click a button."
+ },
+ {
+  "stepId": 15.5,
+  "testArea": "Listing Form Details",
+  "stepAction": "Set Time Estimate in Hours to each of these in turn and save: 1, 0.5, 2.5, 0, -1.",
+  "lookFor": "1, 0.5, 2.5 and 0 all save, and show on the request page with correct singular or plural (1 hour, 2.5 hours).|-1 is refused with a message."
+ },
+ {
+  "stepId": 15.6,
+  "testArea": "Listing Form Details",
+  "stepAction": "Create a request titled: Help with garden 🌱, Gartenhilfe, 庭の手伝い. Then search Requests for Gartenhilfe.",
+  "lookFor": "The title displays correctly on the request page and in the list.|Searching for Gartenhilfe finds the request."
+ },
+ {
+  "stepId": 15.7,
+  "testArea": "Listing Form Details",
+  "stepAction": "With no active offers of your own, create a request and choose Service Exchange as the medium of exchange.",
+  "lookFor": "A message says you need to publish an offer first."
+ },
+ {
+  "stepId": 16.1,
+  "testArea": "Exchanges (KEY TEST)",
+  "stepAction": "Two testers online at the same time: Tester A and Tester B.|Tester A: create a request.|Tester B: open it and click 'Interested in this request?'",
+  "lookFor": "Tester B sees that interest is registered, with the date.|Tester B sees Send a proposal, Withdraw interest and View contact information."
+ },
+ {
+  "stepId": 16.2,
+  "testArea": "Exchanges (KEY TEST)",
+  "stepAction": "Tester A: open the same request.",
+  "lookFor": "Tester B's name appears under Interested members, with a Send a proposal link."
+ },
+ {
+  "stepId": 16.3,
+  "testArea": "Exchanges (KEY TEST)",
+  "stepAction": "Tester B: click Send a proposal. Choose the medium of exchange, enter hours, write the proposal (up to 300 characters) and a delivery timeframe. Click Preview, then Send proposal.",
+  "lookFor": "The preview matches what you entered.|After sending, the exchange shows as proposed and waiting on Tester A."
+ },
+ {
+  "stepId": 16.4,
+  "testArea": "Exchanges (KEY TEST)",
+  "stepAction": "Tester A: open My Exchanges.",
+  "lookFor": "The proposal is listed and marked Your turn.|The Side, From, Turn and Order filters show and hide it correctly."
+ },
+ {
+  "stepId": 16.5,
+  "testArea": "Exchanges (KEY TEST)",
+  "stepAction": "Tester A: open the proposal, click Counter, change the hours and send.|Tester B: open the counter-proposal and click Accept and form agreement.",
+  "lookFor": "Both testers see the exchange as agreed.|The agreed terms are the counter-proposal's, not the original's."
+ },
+ {
+  "stepId": 16.6,
+  "testArea": "Exchanges (KEY TEST)",
+  "stepAction": "Tester B clicks Mark my part done first. Then Tester A clicks Mark my part done.",
+  "lookFor": "After Tester B's click, the exchange shows it is waiting on Tester A.|After both, the exchange is Complete and each tester sees a review form."
+ },
+ {
+  "stepId": 16.7,
+  "testArea": "Exchanges (KEY TEST)",
+  "stepAction": "Both testers: choose a rating from 1 to 5, set Delivered on time and Matched what we agreed, write a comment and click Submit review.",
+  "lookFor": "Submit review is unavailable until a rating is chosen.|After both reviews, the exchange shows as reviewed by both, and both reviews are visible to both testers."
+ },
+ {
+  "stepId": 17.1,
+  "testArea": "Exchanges: Other Paths",
+  "stepAction": "Two testers online at the same time: Tester A and Tester B.|Start a new exchange and get it agreed. Then either tester opens Cancel this agreement, adds a note and clicks Cancel agreement.",
+  "lookFor": "Both testers see the exchange as cancelled, with the date."
+ },
+ {
+  "stepId": 17.2,
+  "testArea": "Exchanges: Other Paths",
+  "stepAction": "Tester B: send a new proposal, then withdraw it before Tester A responds.",
+  "lookFor": "Tester B sees the proposal withdrawn.|Tester A sees it as withdrawn and cannot accept it."
+ },
+ {
+  "stepId": 17.3,
+  "testArea": "Exchanges: Other Paths",
+  "stepAction": "Tester B: on a request where you have only registered interest, click Withdraw interest.",
+  "lookFor": "Tester B is no longer under Interested members for Tester A."
+ },
+ {
+  "stepId": 17.4,
+  "testArea": "Exchanges: Other Paths",
+  "stepAction": "Tester B: send a proposal with Service Exchange as the medium, and choose 'None of these, get in touch' under Chosen service offer.",
+  "lookFor": "The proposal cannot be sent.|Your draft is kept.|A way to contact Tester A is offered."
+ },
+ {
+  "stepId": 17.5,
+  "testArea": "Exchanges: Other Paths",
+  "stepAction": "Get a new exchange agreed. Both testers click Mark my part done at the same moment.",
+  "lookFor": "The exchange becomes Complete for both testers, with no error and no duplicate entries."
+ },
+ {
+  "stepId": 17.6,
+  "testArea": "Exchanges: Other Paths",
+  "stepAction": "With an agreed exchange, Tester B quits the app. Tester A clicks Mark my part done. After two minutes, Tester B reopens the app and opens the exchange.",
+  "lookFor": "Tester B sees Tester A's part marked done."
+ },
+ {
+  "stepId": 18.1,
+  "testArea": "Posting for an Organization",
+  "stepAction": "Tester A: create an organisation, then open its Requests tab.",
+  "lookFor": "The page says the organisation must be accepted before it can create requests."
+ },
+ {
+  "stepId": 18.2,
+  "testArea": "Posting for an Organization",
+  "stepAction": "One tester must be an administrator.|Administrator: in the admin panel, under Moderation Queue, open Pending Orgs and click Approve for Tester A's organisation.",
+  "lookFor": "The organisation leaves the pending list.|Tester A can now create requests and offers from the organisation page."
+ },
+ {
+  "stepId": 18.3,
+  "testArea": "Posting for an Organization",
+  "stepAction": "Two testers online at the same time: Tester A and Tester B.|Tester A: on the organisation page, open Members, click Add Member and add Tester B.",
+  "lookFor": "Tester B is listed as a member.|Tester A is listed as a coordinator."
+ },
+ {
+  "stepId": 18.4,
+  "testArea": "Posting for an Organization",
+  "stepAction": "Tester B (a member, not a coordinator): create a request, choose the organisation under Organization and save.",
+  "lookFor": "The organisation is available to choose.|The saved request shows the organisation."
+ },
+ {
+  "stepId": 18.5,
+  "testArea": "Posting for an Organization",
+  "stepAction": "Tester A: edit a request that was posted for the organisation.",
+  "lookFor": "The organisation cannot be changed after publishing."
+ },
+ {
+  "stepId": 18.6,
+  "testArea": "Posting for an Organization",
+  "stepAction": "Tester B: on the organisation page, click Leave Organization.",
+  "lookFor": "Tester B is no longer listed as a member, for both testers.|Tester B's existing listings and exchanges are unchanged."
+ },
+ {
+  "stepId": 19.1,
+  "testArea": "Administration",
+  "stepAction": "One tester must be an administrator.|Administrator: press Alt+A, then press it again.|A tester who is not an administrator: press Alt+A.",
+  "lookFor": "For the administrator, Alt+A moves into the admin panel and back.|For the non-administrator, nothing happens."
+ },
+ {
+  "stepId": 19.2,
+  "testArea": "Administration",
+  "stepAction": "Administrator: in the admin panel, open Users and suspend a test member, giving a reason. That member then tries to create a request.",
+  "lookFor": "The suspension is saved, and Users Status History shows it with the reason.|The suspended member cannot create a request."
+ },
+ {
+  "stepId": 19.3,
+  "testArea": "Administration",
+  "stepAction": "Administrator: restore the member to accepted. The member then creates a request.",
+  "lookFor": "The member can create the request.|Users Status History shows both changes, in order."
+ },
+ {
+  "stepId": 19.4,
+  "testArea": "Administration",
+  "stepAction": "Administrator: open Administrators and add another tester as an administrator. That tester then presses Alt+A.",
+  "lookFor": "The new administrator can open the admin panel."
+ },
+ {
+  "stepId": 20.1,
+  "testArea": "Network & Upgrades",
+  "stepAction": "Two testers online at the same time: Tester A and Tester B.|Both testers: open the connection status popup and compare your Network Seed and DNA.",
+  "lookFor": "Both testers have the same Network Seed and the same DNA."
+ },
+ {
+  "stepId": 20.2,
+  "testArea": "Network & Upgrades",
+  "stepAction": "Be the only tester online. Launch the app and wait five minutes.",
+  "lookFor": "The status does not show as fully connected while you have no peers."
+ },
+ {
+  "stepId": 20.3,
+  "testArea": "Network & Upgrades",
+  "stepAction": "Quit the app completely and reopen it.",
+  "lookFor": "Your profile, listings and exchanges are all still there."
+ },
+ {
+  "stepId": 20.4,
+  "testArea": "Network & Upgrades",
+  "stepAction": "Only if you have an install from before 25 September: install the new version over it without clearing the old data. Compare seed and DNA with a tester on a clean install (as in 20.1).",
+  "lookFor": "Your seed and DNA differ from the clean install, as the release notes predict."
+ },
+ {
+  "stepId": 20.5,
+  "testArea": "Network & Upgrades",
+  "stepAction": "Intel Mac, Windows or Linux only: install and launch the app, then complete 1.4 and 20.1.",
+  "lookFor": "The app starts, connects, and matches your partner's seed and DNA."
+ }
+]

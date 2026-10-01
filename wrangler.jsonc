@@ -1,0 +1,41 @@
+{
+  "name": "ro-test-tracker",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-10-01",
+
+  // Off from the first deploy, as on the design site. A workers.dev hostname is
+  // public the moment it exists and cannot be gated afterwards.
+  "workers_dev": false,
+  "preview_urls": false,
+
+  // Cloudflare creates the DNS record for this on deploy. Before the first deploy:
+  // the hostname is on the Access application, and any old record for it is gone
+  // (wrangler will not overwrite a record it did not create).
+  "routes": [{ "pattern": "test.happenings.community", "custom_domain": true }],
+
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash",
+    // Only the API runs code. The page, logo and templates are served as files.
+    "run_worker_first": ["/api/*"]
+  },
+
+  // Public settings. Secrets are set with `wrangler secret put`, never written here:
+  //   GH_APP_PRIVATE_KEY   the App's private key, the .pem file's whole contents
+  //   TESTER_ID_SECRET     any long random string; set once, never change it
+  //   ACCESS_AUD           the Access application's Audience (AUD) tag
+  "vars": {
+    // A new round is a new templates file and these two lines.
+    "ROUND": "alpha1",
+    "ROUND_VERSION": "v0.6.0-alpha.1",
+
+    "GH_ORG": "happenings-community",
+    "GH_APP_ID": "5151079",
+    "TRACKER_REPO": "ro-test-tracker",
+    "REPORT_REPO": "requests-and-offers",
+    "REPORT_CATEGORY": "Release feedback",
+    "ACCESS_TEAM_DOMAIN": "happeningscic.cloudflareaccess.com"
+  }
+}
