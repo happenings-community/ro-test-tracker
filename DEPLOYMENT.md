@@ -111,19 +111,30 @@ gh api /orgs/happenings-community/installations --jq '.installations[] | {app: .
 
 Cloudflare One → Access → Applications → **Add an application** → Self-hosted.
 
-- Name: `R&O test tracker`. Destination: `test-next.happenings.community` (staging)
+- Name: `R&O test tracker`. Destination: `test.happenings.community`
 - Policy: a new reusable policy `R&O testers`, Action Allow, Include Emails: each tester.
   Session duration on the policy: **1 month** (testers on Proton, as on the design site)
 - Save, then copy the application's **Audience (AUD) tag** from its overview
 
 Access matches on hostname, so it gates the address before anything is deployed there.
 
-### 3. First deploy, to staging
+No staging hostname: when this was set up, nobody was using the old tracker (its tokens had
+expired), so there was nothing to keep running during the switch. If testers are active
+next time, stage on a second hostname first, as the design site's checklist describes.
 
-Put the App ID into `GH_APP_ID` in `wrangler.jsonc`, merge to `main`, and let the workflow
-deploy. `wrangler.jsonc` points at `test-next.happenings.community`, which Cloudflare creates.
+### 3. Release the hostname from GitHub Pages
 
-### 4. Worker secrets
+1. GitHub: ro-test-tracker → Settings → Pages → remove the custom domain, then set the
+   source to **None** so Pages stops publishing
+2. Cloudflare DNS for happenings.community: delete the `test` CNAME that points at
+   `happenings-community.github.io` (wrangler will not overwrite a record it did not create)
+
+### 4. First deploy
+
+Merge to `main`; the workflow deploys and Cloudflare creates the record for
+`test.happenings.community`.
+
+### 5. Worker secrets
 
 Workers & Pages → `ro-test-tracker` → Settings → Variables and Secrets → Add, type **Secret**:
 
@@ -137,10 +148,10 @@ Secrets survive later deploys; the plain settings in `wrangler.jsonc` are rewrit
 Delete the `.pem` from Downloads once the secret is saved. If it is ever needed again,
 generate a new key on the App and delete the old one.
 
-### 5. Verify on staging
+### 6. Verify
 
 ```
-curl -sI https://test-next.happenings.community/ | grep -i "^location"
+curl -sI https://test.happenings.community/ | grep -i "^location"
 ```
 
 It must redirect to `happeningscic.cloudflareaccess.com`. A `200` is an open door.
@@ -149,18 +160,8 @@ Then sign in, register, fail a step with a screenshot and post the report. Check
 discussion in Release feedback has all seven headings and the image shows. Have a second
 tester fail the same step and check it arrives as a comment. Delete the test discussions.
 
-### 6. Cut over
-
-1. GitHub: ro-test-tracker → Settings → Pages → remove the custom domain, then unpublish
-2. Cloudflare DNS: delete the `test` CNAME that points at `happenings-community.github.io`
-   (wrangler will not overwrite a record it did not create)
-3. Access: add `test.happenings.community` as a destination on the application
-4. `wrangler.jsonc`: change the route pattern to `test.happenings.community`; merge
-5. Repeat the `curl` check against `test.happenings.community`
-
 ### 7. Tidy, in teardown order
 
 1. Delete the old Worker `ro-test-proxy`
-2. Remove the `test-next` destination from Access
-3. Delete both expired `ro-test-tracker` tokens on GitHub (fine-grained and classic)
-4. Remove the old GitHub Pages files from the repo root once nobody needs them
+2. Delete both expired `ro-test-tracker` tokens on GitHub (fine-grained and classic)
+3. Remove the old GitHub Pages files (`index.html`, `CNAME`) from the repo root

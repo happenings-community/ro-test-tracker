@@ -8,13 +8,10 @@
   "workers_dev": false,
   "preview_urls": false,
 
-  // Staging first. Add test-next.happenings.community to the Access application
-  // BEFORE the first deploy (Access matches on hostname, DNS need not exist yet).
-  //
-  // At cutover: remove the custom domain from GitHub Pages, delete the old `test`
-  // CNAME in Cloudflare DNS (wrangler will not overwrite a record it did not create),
-  // change this pattern to test.happenings.community and redeploy.
-  "routes": [{ "pattern": "test-next.happenings.community", "custom_domain": true }],
+  // Cloudflare creates the DNS record for this on deploy. Before the first deploy:
+  // the hostname is on the Access application, and any old record for it is gone
+  // (wrangler will not overwrite a record it did not create).
+  "routes": [{ "pattern": "test.happenings.community", "custom_domain": true }],
 
   "assets": {
     "directory": "./public",
