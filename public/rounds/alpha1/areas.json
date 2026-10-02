@@ -1,0 +1,13 @@
+{
+  "1":  { "needs": "" },
+  "2":  { "needs": "" },
+  "9":  { "needs": "" },
+  "13": { "needs": "Admin" },
+  "14": { "needs": "Partner" },
+  "15": { "needs": "" },
+  "16": { "needs": "Partner" },
+  "17": { "needs": "Partner" },
+  "18": { "needs": "Partner & admin" },
+  "19": { "needs": "Partner & admin" },
+  "20": { "needs": "Partner" }
+}

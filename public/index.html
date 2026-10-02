@@ -900,6 +900,12 @@ body {
 }
 
 /* ── Added for the Worker version ── */
+.overview { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem 1rem; margin-bottom: 1rem; }
+.overview-title { font-size: 0.95rem; color: var(--purple); margin: 0 0 0.6rem; }
+.overview .qr-table td:nth-child(2) { white-space: nowrap; }
+.overview-link { color: var(--purple); text-decoration: none; font-weight: 600; }
+.overview-link:hover { text-decoration: underline; }
+.test-group { scroll-margin-top: 90px; }
 .login-card select, .login-card input { width: 100%; }
 .login-card .hint { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem; line-height: 1.4; }
 .signed-in { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.75rem; }
@@ -1056,6 +1062,7 @@ const state = {
   round: null,        // { id, version, machines }
   tester: null,       // { name, machine, os, network, results: { "13.2": {result, notes, discussion} } }
   steps: [],          // templates for this round
+  areas: null,        // optional per-area notes for this round (areas.json)
   report: null,       // { stepId|null } while the modal is open
   shots: []           // [{ file, preview, url|null, status }]
 };
@@ -1094,6 +1101,12 @@ async function api(method, path, body, isBinary) {
     const res = await fetch('/rounds/' + encodeURIComponent(me.round.id) + '/templates.json');
     if (!res.ok) throw new Error('Could not load the test steps for this round.');
     state.steps = await res.json();
+
+    // Optional: who each area needs. A round without the file simply has no overview.
+    try {
+      const a = await fetch('/rounds/' + encodeURIComponent(me.round.id) + '/areas.json');
+      if (a.ok) state.areas = await a.json();
+    } catch (e) {}
 
     if (me.tester) {
       state.tester = me.tester;
@@ -1190,6 +1203,18 @@ function groups() {
 function renderSteps() {
   let html = '';
 
+  if (state.areas) {
+    html += '<div class="overview">';
+    html += '<h3 class="overview-title">The test areas</h3>';
+    html += '<table class="qr-table"><tr><th>Area</th><th>Number of steps</th><th>Needs</th></tr>';
+    groups().forEach(g => {
+      const needs = (state.areas[g.num] || {}).needs || 'None';
+      html += '<tr><td><a href="#group-' + g.num + '" class="overview-link">' + escapeHtml(g.name || '') + '</a></td>';
+      html += '<td>' + g.steps.length + '</td><td>' + escapeHtml(needs) + '</td></tr>';
+    });
+    html += '</table></div>';
+  }
+
   html += '<div class="quick-ref collapsed" id="quickRef">';
   html += '<div class="quick-ref-header" onclick="document.getElementById(\'quickRef\').classList.toggle(\'collapsed\')">';
   html += '<span class="qr-icon">📚</span><span class="qr-title">How each step works</span>';
@@ -1208,7 +1233,6 @@ function renderSteps() {
     const done = g.steps.filter(s => resultOf(s.stepId).result).length;
     html += '<div class="test-group" id="group-' + g.num + '">';
     html += '<div class="test-group-header" onclick="toggleGroup(\'' + g.num + '\')">';
-    html += '<span class="test-num">Area ' + g.num + '</span>';
     html += '<span class="test-title">' + escapeHtml(g.name || '') + '</span>';
     html += '<span class="group-progress">' + done + '/' + g.steps.length + '</span>';
     html += '<span class="chevron">‹</span></div><div class="test-steps">';

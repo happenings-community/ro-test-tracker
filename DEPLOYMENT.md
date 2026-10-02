@@ -60,8 +60,11 @@ Maintainers promote a reproduced report to an issue, as the contributing guide s
 
 1. Add `public/rounds/<round>/templates.json` (stepIds as `area.step`, at most 9 steps per
    area, because `16.10` and `16.1` are the same number)
-2. Change `ROUND` and `ROUND_VERSION` in `wrangler.jsonc`
-3. Merge. Earlier rounds' results stay where they are
+2. Optionally add `public/rounds/<round>/areas.json`: for each area number, `needs` is
+   `""`, `"Partner"`, `"Admin"` or `"Partner & admin"`. With it, the page opens with an
+   overview table of areas, step counts and needs; without it, there is no overview
+3. Change `ROUND` and `ROUND_VERSION` in `wrangler.jsonc`
+4. Merge. Earlier rounds' results stay where they are
 
 ## Deploying
 
