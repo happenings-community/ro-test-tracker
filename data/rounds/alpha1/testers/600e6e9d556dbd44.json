@@ -6,7 +6,7 @@
   "registeredAt": "2026-10-01",
   "results": {
     "1.2": {
-      "result": "Fail",
+      "result": "Pass",
       "notes": "",
       "discussion": "https://github.com/happenings-community/requests-and-offers/discussions/302"
     }
