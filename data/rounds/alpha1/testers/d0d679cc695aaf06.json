@@ -4,5 +4,10 @@
   "os": "Tahoe 26.5.2",
   "network": "",
   "registeredAt": "2026-10-02",
-  "results": {}
+  "results": {
+    "1.2": {
+      "result": "Pass",
+      "notes": ""
+    }
+  }
 }
