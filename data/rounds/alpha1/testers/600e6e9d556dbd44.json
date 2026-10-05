@@ -24,7 +24,8 @@
     },
     "9.2": {
       "result": "Partial",
-      "notes": ""
+      "notes": "",
+      "discussion": "https://github.com/happenings-community/requests-and-offers/discussions/309"
     },
     "13.1": {
       "result": "Pass",
