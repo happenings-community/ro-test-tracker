@@ -35,7 +35,8 @@
     },
     "14.3": {
       "result": "Fail",
-      "notes": ""
+      "notes": "",
+      "discussion": "https://github.com/happenings-community/requests-and-offers/discussions/311#discussioncomment-18763582"
     }
   }
 }
