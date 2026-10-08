@@ -40,7 +40,8 @@
     },
     "15.1": {
       "result": "Fail",
-      "notes": ""
+      "notes": "",
+      "discussion": "https://github.com/happenings-community/requests-and-offers/discussions/315"
     }
   }
 }
