@@ -47,6 +47,10 @@
       "result": "Fail",
       "notes": "",
       "discussion": "https://github.com/happenings-community/requests-and-offers/discussions/322"
+    },
+    "15.3": {
+      "result": "Pass",
+      "notes": ""
     }
   }
 }
