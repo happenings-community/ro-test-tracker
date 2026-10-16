@@ -105,6 +105,10 @@
     "16.6": {
       "result": "Pass",
       "notes": ""
+    },
+    "16.7": {
+      "result": "Partial",
+      "notes": ""
     }
   }
 }
