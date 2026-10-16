@@ -101,6 +101,10 @@
       "result": "Partial",
       "notes": "",
       "discussion": "https://github.com/happenings-community/requests-and-offers/discussions/327"
+    },
+    "16.6": {
+      "result": "Pass",
+      "notes": ""
     }
   }
 }
