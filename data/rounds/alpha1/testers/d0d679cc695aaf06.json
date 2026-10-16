@@ -84,7 +84,7 @@
     },
     "13.4": {
       "result": "Pass",
-      "notes": "User needs to refresh to in order to have Tester B off the pending list."
+      "notes": "User needs to refresh in order to have Tester B off the pending list."
     }
   }
 }
