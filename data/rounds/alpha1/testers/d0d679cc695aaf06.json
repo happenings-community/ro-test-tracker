@@ -85,6 +85,10 @@
     "13.4": {
       "result": "Pass",
       "notes": "User needs to refresh in order to have Tester B off the pending list."
+    },
+    "13.5": {
+      "result": "Pass",
+      "notes": ""
     }
   }
 }
