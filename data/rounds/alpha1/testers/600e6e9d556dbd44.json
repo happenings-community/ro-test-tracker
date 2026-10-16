@@ -99,7 +99,8 @@
     },
     "16.5": {
       "result": "Partial",
-      "notes": ""
+      "notes": "",
+      "discussion": "https://github.com/happenings-community/requests-and-offers/discussions/327"
     }
   }
 }
